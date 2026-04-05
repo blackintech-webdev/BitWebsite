@@ -4,31 +4,101 @@ import '../ClubPageExample.css';
 import PlaceholderImage from '../PlaceholderImage';
 
 const PastBoardMembers = () => {
-  const pastBoardMembers = [
+  const pastBoardMembersByYear = [
     {
-      name: "Jason Phan",
-      position: "Web Developer",
-      image: '/images/BoardSolo/JasonSolo.jpg',
+      year: "2025-2026",
+      members: [
+        {
+          name: "Chidera Okoroama",
+          position: "President",
+          image: '/images/BoardSolo/Chidera Okoroama.jpg',
+        },
+        {
+          name: "Chibueze Ndukwe",
+          position: "Vice President",
+          image: '/images/BoardSolo/Chibueze Ndukwe.jpg',
+        },
+        {
+          name: "Aurelia Aubrey",
+          position: "Treasurer",
+          image: '/images/BoardSolo/Aurelia Aubrey.jpg',
+        },
+        {
+          name: "Ziyad Abbas",
+          position: "Treasurer",
+          image: '/images/BoardSolo/Ziyad Abbas.jpg',
+        },
+        {
+          name: "Stephanie Onwu",
+          position: "Secretary",
+          image: '/images/BoardSolo/Stephanie Onwu.jpg',
+        },
+        {
+          name: "Angela Wang",
+          position: "Marketing",
+          image: '/images/BoardSolo/Angela Wang.jpg',
+        },
+        {
+          name: "Brina White",
+          position: "Marketing",
+          image: '/images/BoardSolo/Brina White.jpg',
+        },
+        {
+          name: "Juan Muhirwe",
+          position: "Event Coordinator",
+          image: '/images/BoardSolo/Juan Muhirwe.jpg',
+        },
+        {
+          name: "Mahanth Kommireddy",
+          position: "Event Coordinator",
+          image: '/images/BoardSolo/Mahanth Kommireddy.jpg',
+        },
+        {
+          name: "Nahum Gebreab",
+          position: "Internal Outreach",
+          image: '/images/BoardSolo/Nahum Gebreab.jpg',
+        },
+        {
+          name: "Derrick Thrower",
+          position: "Web Developer",
+          image: '/images/BoardSolo/Derrick Thrower.jpg',
+        },
+        {
+          name: "Ival Momoh",
+          position: "Web Developer",
+          image: '/images/BoardSolo/Ival Momoh.jpg',
+        },
+        {
+          name: "Chioma Madu",
+          position: "General Officer",
+          image: '/images/BoardSolo/Chioma Madu.jpg',
+        }
+      ]
     },
     {
-      name: "Steven Gorlicki",
-      position: "Web Developer",
-      image: '/images/BoardSolo/StevenSolo.jpg',
-    },
-    {
-      name: "Ijeoma Arisa",
-      position: "Corporate Outreach",
-      image: '/images/BoardSolo/IjeomaSolo.jpg',
-    },
-    {
-      name: "Daniel Gonzales",
-      position: "Marketing",
-      image: '/images/BoardSolo/DanielSolo.jpg',
-    },
-    {
-      name: "Kaneto Ejizu",
-      position: "Co-Event Chair",
-      image: '/images/BoardSolo/KanetoSolo.jpg',
+      year: "2024-2025",
+      members: [
+        {
+          name: "Jason Phan",
+          position: "Web Developer",
+          image: '/images/BoardSolo/JasonSolo.jpg',
+        },
+        {
+          name: "Ijeoma Arisa",
+          position: "Corporate Outreach",
+          image: '/images/BoardSolo/IjeomaSolo.jpg',
+        },
+        {
+          name: "Daniel Gonzales",
+          position: "Marketing",
+          image: '/images/BoardSolo/DanielSolo.jpg',
+        },
+        {
+          name: "Kaneto Ejizu",
+          position: "Co-Event Chair",
+          image: '/images/BoardSolo/KanetoSolo.jpg',
+        }
+      ]
     }
   ];
 
