@@ -34,11 +34,6 @@ const PastBoardMembers = () => {
           image: '/images/BoardSolo/Stephanie Onwu.jpg',
         },
         {
-          name: "Angela Wang",
-          position: "Marketing",
-          image: '/images/BoardSolo/Angela Wang.jpg',
-        },
-        {
           name: "Brina White",
           position: "Marketing",
           image: '/images/BoardSolo/Brina White.jpg',
@@ -84,6 +79,11 @@ const PastBoardMembers = () => {
           image: '/images/BoardSolo/JasonSolo.jpg',
         },
         {
+          name: "Steven Gorlicki",
+          position: "Web Developer",
+          image: '/images/BoardSolo/StevenSolo.jpg',
+        },
+        {
           name: "Ijeoma Arisa",
           position: "Corporate Outreach",
           image: '/images/BoardSolo/IjeomaSolo.jpg',
@@ -117,21 +117,26 @@ const PastBoardMembers = () => {
       <section className="board-section">
         <div className="container">
           <h2 className="fade-in-up">Our Past Board Members</h2>
-          <div className="board-members">
-            {pastBoardMembers.map((member, index) => (
-              <div className="board-member scale-in" key={index}>
-                <div className="member-image">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    onError={(e) => PlaceholderImage.handleImageError(e, member.name)}
-                  />
-                </div>
-                <h3>{member.name}</h3>
-                <p className="position">{member.position}</p>
+          {pastBoardMembersByYear.map((group) => (
+            <div className="past-board-year-group" key={group.year}>
+              <h3 className="past-board-year-heading">{group.year}</h3>
+              <div className="board-members">
+                {group.members.map((member, index) => (
+                  <div className="board-member scale-in" key={`${group.year}-${index}`}>
+                    <div className="member-image">
+                      <img
+                        src={member.image} 
+                        alt={member.name} 
+                        onError={(e) => PlaceholderImage.handleImageError(e, member.name)}
+                      />
+                    </div>
+                    <h3>{member.name}</h3>
+                    <p className="position">{member.position}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
