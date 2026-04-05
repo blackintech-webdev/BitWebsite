@@ -9,31 +9,26 @@ const PastBoardMembers = () => {
       name: "Jason Phan",
       position: "Web Developer",
       image: '/images/BoardSolo/JasonSolo.jpg',
-      bio: "Junior Computer Science major passionate about web technologies and developing inclusive digital spaces that represent diverse backgrounds."
     },
     {
       name: "Steven Gorlicki",
       position: "Web Developer",
       image: '/images/BoardSolo/StevenSolo.jpg',
-      bio: "Junior Software Engineer with a focus on front-end development and creating engaging user experiences that celebrate diversity."
     },
     {
       name: "Ijeoma Arisa",
       position: "Corporate Outreach",
       image: '/images/BoardSolo/IjeomaSolo.jpg',
-      bio: "Senior Computer Science major with strong networking skills and a passion for connecting underrepresented students with industry opportunities."
     },
     {
       name: "Daniel Gonzales",
       position: "Marketing",
       image: '/images/BoardSolo/DanielSolo.jpg',
-      bio: "Senior Computer Science major with a passion for creating engaging content and building community through strategic marketing initiatives."
     },
     {
       name: "Kaneto Ejizu",
       position: "Co-Event Chair",
       image: '/images/BoardSolo/KanetoSolo.jpg',
-      bio: "Junior Software Engineer with a flair for event planning and creating engaging workshops that build technical skills and community connections."
     }
   ];
 
@@ -64,7 +59,6 @@ const PastBoardMembers = () => {
                 </div>
                 <h3>{member.name}</h3>
                 <p className="position">{member.position}</p>
-                <p className="bio">{member.bio}</p>
               </div>
             ))}
           </div>
