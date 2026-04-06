@@ -42,7 +42,7 @@ const Footer = () => {
         
         <div className="footer-bottom fade-in-up">
           <p>&copy; {new Date().getFullYear()} Black in Tech at UCI. All rights reserved.</p>
-          <p>Developed by Alyas Thomas, Steven Gorlicki, and Jason Phan</p>
+          <p>Developed by the BiT Web Development Team</p>
         </div>
       </div>
     </footer>
