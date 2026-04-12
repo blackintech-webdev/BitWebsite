@@ -12,7 +12,7 @@ const GetInvolved = () => {
   };
 
   return (
-    <div className="get-involved-page">
+    <div className="get-involved-page page-transition">
       {/* Hero Section with Modern Design */}
       <div className="hero-section">
         <div className="container">

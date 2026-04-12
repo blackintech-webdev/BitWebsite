@@ -484,6 +484,10 @@ section {
   }
 }
 
+.page-transition {
+  animation: fadeInUp 1s ease-out;
+}
+
 .fade-in-up {
   animation: fadeInUp 1s ease-out;
 }
