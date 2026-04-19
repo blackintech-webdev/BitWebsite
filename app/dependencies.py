@@ -1,15 +1,21 @@
-from fastapi import Header, HTTPException
-from config import supabase
+from fastapi import HTTPException, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from app.config import supabase
+
+security = HTTPBearer()
 
 
-async def require_auth(authorization: str = Header(...)):
-    if not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=401, detail="Invalid auth header")
-    token = authorization.split(" ")[1]
+async def require_auth(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    token = credentials.credentials
+    print(f"Token received: {token[:20]}...")  # debug
     try:
         user = supabase.auth.get_user(token)
+        print(f"User: {user}")  # debug
         if not user or not user.user:
             raise HTTPException(status_code=401, detail="Invalid or expired token")
         return user.user
-    except Exception:
-        raise HTTPException(status_code=401, detail="Unauthorized")
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"Auth error: {e}")  # debug
+        raise HTTPException(status_code=401, detail=str(e))
