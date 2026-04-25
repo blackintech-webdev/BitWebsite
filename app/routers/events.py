@@ -28,7 +28,7 @@ def create_event(
     event: EventCreate,
     user=Depends(require_auth)
 ):
-    res = supabase_admin.table("events").insert(event.model_dump()).execute()
+    res = supabase_admin.table("events").insert(event.model_dump(mode='json')).execute()
     return res.data[0]
 
 
@@ -39,7 +39,7 @@ def update_event(
     event: EventUpdate,
     user=Depends(require_auth)
 ):
-    updates = {k: v for k, v in event.model_dump().items() if v is not None}
+    updates = {k: v for k, v in event.model_dump(mode='json').items() if v is not None}
     if not updates:
         raise HTTPException(status_code=400, detail="No fields to update")
     
