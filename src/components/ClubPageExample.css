@@ -492,6 +492,22 @@ body .about-page .board-section .board-member h3 {
   object-position: 50% 30% !important;
 }
 
+.board-loading {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  padding: 40px 0;
+  letter-spacing: 0.3px;
+}
+
+.board-error {
+  text-align: center;
+  color: #c0392b;
+  font-size: 1rem;
+  padding: 40px 0;
+  letter-spacing: 0.3px;
+}
+
 /* CTA Button Styles */
 .cta-buttons {
   display: flex;

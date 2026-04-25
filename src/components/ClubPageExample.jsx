@@ -1,124 +1,29 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ClubPageExample.css";
 import PlaceholderImage from "./PlaceholderImage";
 import LinkedInImage from "../../public/images/icons/linkedin.svg";
 
 const ClubPageExample = () => {
-  const boardMembers = [
-    {
-      name: "Alyas Thomas",
-      position: "President",
-      image: "/images/BoardSolo/Alyas Thomas.jpg",
-      bio: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.",
-      linkedin: "https://www.linkedin.com/in/alyasthomas/",
-    },
-    {
-      name: "Layla Harvey",
-      position: "Vice President",
-      image: "/images/BoardSolo/Layla Harvey.jpg",
-      bio: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.",
-      linkedin: "https://www.linkedin.com/in/layla-mariela-harvey-609963327/",
-    },
-    {
-      name: "Adonai Fesseheye",
-      position: "Treasurer",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Junior Economics major with strong financial management skills, committed to ensuring the organization’s long-term growth, stability, and success.",
-      linkedin: "https://www.linkedin.com/in/adonai-fessehaye-89b2271b6/",
-    },
-    {
-      name: "Burhan Shahid",
-      position: "Secretary",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Freshman CSE major with a strong background in mobile app development, bringing organization and strong attention to detail to the team.",
-      linkedin: "https://www.linkedin.com/in/burhanshahid75/",
-    },
-    {
-      name: "Stephanie Penabella",
-      position: "Marketing",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.",
-      linkedin: "https://www.linkedin.com/in/stephanie-penabella-902a65333/",
-    },
-    {
-      name: "Angela Wang",
-      position: "Marketing & UI/UX Lead",
-      image: "/images/BoardSolo/Angela Wang.jpg",
-      bio: "Designer dedicated to translating unique, personal experiences into inclusive design solutions to advocate for vulnerable communities.",
-      linkedin: "https://www.linkedin.com/in/angela-x-wang/",
-    },
-    {
-      name: "Sanjoy Datta",
-      position: "Event Coordinator",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Sophomore SWE major passionate about creating memorable experiences through well-planned events that bring members together.",
-      linkedin: "https://www.linkedin.com/in/datta-sanjoy/",
-    },
-    {
-      name: "Timothy Llata",
-      position: "Event Coordinator",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Freshman Data Science major with a talent for organizing thoughtful events that foster member involvement and strengthen connections.",
-      linkedin: "https://www.linkedin.com/in/timothyllata/",
-    },
-    {
-      name: "Abdulwahab Aldeyyeain",
-      position: "Internal Outreach",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Junior Computer Engineering major passionate about building partnerships and helping students explore careers in technology.",
-      linkedin: "https://www.linkedin.com/in/abdulwahab-aldeyyeain-500506391/",
-    },
-    {
-      name: "Helen Shibeshi",
-      position: "External Outreach",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.",
-      linkedin: "https://www.linkedin.com/in/helenshibeshi/",
-    },
-    {
-      name: "Naysa Yow Fletcher",
-      position: "Mentorship Outreach",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Freshman Quant Econ major with a passion for community building and meaningful engagement that helps members grow and connect.",
-      linkedin: "https://www.linkedin.com/in/naysa-yow-fletcher-563a31282/",
-    },
-    {
-      name: "Karl Klaffenbach",
-      position: "General Outreach",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Freshman Computer Science major dedicated to making tech more accessible while expanding career opportunities for members.",
-      linkedin: "https://www.linkedin.com/in/karlk1/",
-    },
-    {
-      name: "Jonathan Chau",
-      position: "Web Developer",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Sophomore Computer Science major passionate about building impactful projects that promote inclusivity in tech.",
-      linkedin: "https://www.linkedin.com/in/jonathan-chau06/",
-    },
-    {
-      name: "Jovan George",
-      position: "Web Developer",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Freshman Computer Science major focused on developing software that improves educational accessibility in tech.",
-      linkedin: "https://www.linkedin.com/in/jovan-george-608823382/",
-    },
-    {
-      name: "Brook Issayas",
-      position: "Web Developer",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Freshman Computer Science major dedicated to supporting the BIT community through creative web development.",
-      linkedin: "https://www.linkedin.com/in/brook-issayas/",
-    },
-    {
-      name: "Johnny Wu",
-      position: "Web Development Mentor",
-      image: "/public/images/icons/avatar.webp",
-      bio: "Junior Computer Science major developing websites for social impact while helping students improve their technical skills.",
-      linkedin: "https://www.linkedin.com/in/johwuy/",
-    },
-  ];
+  const [boardMembers, setBoardMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/board-members/")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch board members");
+        return res.json();
+      })
+      .then((data) => {
+        setBoardMembers(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="about-page page-transition">
@@ -241,44 +146,54 @@ const ClubPageExample = () => {
       <section className="board-section">
         <div className="container">
           <h2 className="fade-in-up">Meet Our Board</h2>
-          <div className="board-members">
-            {boardMembers.map((member, index) => (
-              <div className="board-member scale-in" key={index}>
-                <div className="member-image">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    onError={(e) =>
-                      PlaceholderImage.handleImageError(e, member.name)
-                    }
-                  />
-                </div>
-                <h3>{member.name}</h3>
-                <p className="position">{member.position}</p>
-                <p className="bio">{member.bio}</p>
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="linkedin-link"
+          
+            {loading && <p className="board-loading">Loading...</p>}
+            {error && <p className="board-error">Error: {error}</p>}
+            {!loading && !error && (
+              <div className="board-members">
+                {boardMembers.map((member) => (
+                  <div
+                    className="board-member scale-in"
+                    key={member.display_order}
                   >
-                    <img
-                      src={LinkedInImage}
-                      alt={`${member.name} LinkedIn`}
-                      className="linkedin-icon"
-                    />
-                  </a>
-                )}
+                    <div className="member-image">
+                      <img
+                        src={member.photo_url}
+                        alt={member.name}
+                        onError={(e) =>
+                          PlaceholderImage.handleImageError(e, member.name)
+                        }
+                      />
+                    </div>
+                    <h3>{member.name}</h3>
+                    <p className="position">{member.position}</p>
+                    <p className="bio">{member.blurb}</p>
+
+                    {member.linkedin_url && (
+                      <a
+                        href={member.linkedin_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="linkedin-link"
+                      >
+                        <img
+                          src={LinkedInImage}
+                          alt={`${member.name} LinkedIn`}
+                          className="linkedin-icon"
+                        />
+                      </a>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
           <div className="board-actions fade-in-up">
             <Link to="/about/past-board" className="cta-button">
               View Past Board Members
             </Link>
           </div>
-        </div>
+
       </section>
     </div>
   );
