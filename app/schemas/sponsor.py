@@ -5,9 +5,9 @@ import uuid
 
 class SponsorCreate(BaseModel):
     name: str
-    logo_url: Optional[str] = None
+    logo_url: str
     link: Optional[str] = None
-    tier: Optional[str] = None
+    tier: str
 
 
 class SponsorUpdate(BaseModel):
