@@ -380,23 +380,6 @@ hr {
   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.cta-button::after {
-  content: "\f054"; /* Font Awesome chevron-right icon */
-  font-family: "Font Awesome 5 Free", FontAwesome, sans-serif;
-  font-weight: 900;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: all 0.2s ease;
-}
-
-.cta-button:hover::after {
-  opacity: 1;
-  right: 15px;
-}
-
 /* Content Section */
 .events-content {
   max-width: 1400px;
