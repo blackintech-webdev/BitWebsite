@@ -12,8 +12,8 @@ class SponsorCreate(BaseModel):
 
 class SponsorUpdate(BaseModel):
     name: Optional[str] = None
-    logo_url: Optional[str] = None
-    link: Optional[str] = None
+    logo_url: Optional[HttpUrl] = None
+    link: Optional[HttpUrl] = None
     tier: Optional[str] = None
 
 
