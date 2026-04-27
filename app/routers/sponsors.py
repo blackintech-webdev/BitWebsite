@@ -9,13 +9,11 @@ from typing import List
 router = APIRouter(prefix="/sponsors", tags=["Sponsors"])
 
 # Get All Sponsors - PUBLIC request(no auth needed)
-
 @router.get("/get-all-sponsors", response_model = List[SponsorOut])
 def get_all_sponsors():
     # Fetch all data from the supabase sponsors table
     get_all_sponsors_api_response = supabase.table("sponsors").select("*").execute()
     return get_all_sponsors_api_response.data
-
 
 # Get A Specific Sponsor - PUBLIC request(no auth needed)
 @router.get("/get-sponsor/{sponsor_id}", response_model = SponsorOut)
@@ -86,10 +84,12 @@ def update_existing_sponsor(sponsor_id: str, sponsor: SponsorUpdate, user = Depe
     # Update the specified sponsor row in the table with the changes that have been made
     response = supabase_admin.table("sponsors").update(updates).eq("id", sponsor_id).execute()
     if not response.data:
-        raise HTTPException(status_code=404, detail="Invalid sponsor id.")
+        raise HTTPException(status_code = 404, detail = "Couldn't find the sponsor you specified!")
     return response.data[0]
 
-
-
-
-
+# Delete An Existing Sponsor - PROTECTED Request(Auth Needed)
+@router.delete("/delete-sponsor/{sponsor_id}", status_code = 204)
+def delete_sponsor(sponsor_id: str, user = Depends(require_auth)):
+    delete_sponsor_response = supabase_admin.table("sponsors").delete().eq("id", sponsor_id).execute()
+    if not delete_sponsor_response.data:
+        raise HTTPException(status_code = 404, detail = "Couldn't find the sponsor you specified!")
