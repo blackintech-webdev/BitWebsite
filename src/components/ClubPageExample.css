@@ -357,21 +357,32 @@
   letter-spacing: 0.3px;
 }
 
-.board-member .year-major {
-  color: #888;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin: 0 15px 10px;
-  letter-spacing: 0.2px;
-}
-
 .board-member .bio {
   color: #666;
   font-size: 0.9rem;
   line-height: 1.6;
-  margin: 0 15px 20px;
+  margin: 0 15px 5px;
   flex-grow: 1;
   letter-spacing: 0.3px;
+}
+
+/* LinkedIn Icon Styles */
+.linkedin-link {
+  display: inline-block;
+  margin: 0 15px 5px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.linkedin-link:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.linkedin-icon {
+  width: 28px;
+  height: 28px;
+  /* gradient */
+  filter: invert(22%) sepia(74%) saturate(800%) hue-rotate(240deg) brightness(85%);
 }
 
 /* Footer Styles */
@@ -479,6 +490,22 @@ body .about-page .board-section .board-member h3 {
 .board-members > .board-member:nth-child(9) .member-image img,
 .board-members > .board-member:nth-child(14) .member-image img {
   object-position: 50% 30% !important;
+}
+
+.board-loading {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  padding: 40px 0;
+  letter-spacing: 0.3px;
+}
+
+.board-error {
+  text-align: center;
+  color: #c0392b;
+  font-size: 1rem;
+  padding: 40px 0;
+  letter-spacing: 0.3px;
 }
 
 /* CTA Button Styles */
