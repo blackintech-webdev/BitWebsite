@@ -1,13 +1,13 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, HttpUrl
 from typing import Optional
 import uuid
 
 
 class SponsorCreate(BaseModel):
     name: str
-    logo_url: str
-    link: Optional[str] = None
-    tier: str
+    logo_url: HttpUrl
+    link: HttpUrl
+    tier: Optional[str] = None
 
 
 class SponsorUpdate(BaseModel):
