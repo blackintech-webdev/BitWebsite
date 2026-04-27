@@ -11,7 +11,7 @@ router = APIRouter(prefix="/board-members", tags=["Board Members"])
 # GET all — public
 @router.get("/", response_model=List[BoardMemberOut])
 def get_board_members():
-    res = supabase.table("board_members").select("*").execute()
+    res = supabase.table("board_members").select("*").order("display_order").execute()
     return res.data
 
 
