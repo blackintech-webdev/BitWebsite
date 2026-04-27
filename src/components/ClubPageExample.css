@@ -249,6 +249,18 @@
   border: none;
 }
 
+.past-board-year-heading {
+  margin-bottom: 2rem;
+}
+
+.past-board-year-group {
+  margin-top: 3rem;
+}
+
+.past-board-year-group:first-of-type {
+  margin-top: 1rem;
+}
+
 .board-actions {
   margin-top: 40px;
   text-align: center;
