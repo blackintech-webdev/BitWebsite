@@ -9,14 +9,14 @@ router = APIRouter(prefix="/events", tags=["Events"])
 # GET all — public
 @router.get("/", response_model=List[EventOut])
 def get_events():
-    res = supabase.table("events").select("*").execute()
+    res = supabase_admin.table("events").select("*").execute()
     return res.data
 
 
 # GET one — public
 @router.get("/{event_id}", response_model=EventOut)
 def get_event(event_id: str):
-    res = supabase.table("events").select("*").eq("id", event_id).single().execute()
+    res = supabase_admin.table("events").select("*").eq("id", event_id).single().execute()
     if not res.data:
         raise HTTPException(status_code=404, detail="Event not found")
     return res.data
