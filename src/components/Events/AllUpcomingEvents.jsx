@@ -8,13 +8,11 @@ const AllUpcomingEvents = () => {
   const upcomingEvents = [
     {
       id: 1,
-      title: "BiT TECH TALK: FROM IDEAS TO IMPACT",
-      date: "Monday, Oct 20th",
-      time: "6:30-7:30 PM",
-      location: "DBH 1433",
-      description: "Hear firsthand from our guest speakers DeQuan Guillebeau (Founder of DataDrift) and Darcel Mugisha (Co-Founder of GenInnovation) about how they became founders of their own tech companies!",
-      image: "/images/events/FALL25 WEEK 4 EVENT.jpg",
-      url: "/events/tech-talk-ideas-impact"
+      title: "BiT's 30 Minute App Challenge: BUILD NIGHT",
+      date: "May 4, 2026",
+      location: "DBH 1300",
+      description: "Join us for a hands-on event where teams receive a random prompt and must ideate, wireframe, and prototype a mini product using any tools they want!",
+      image: "",
     }
   ];
 
