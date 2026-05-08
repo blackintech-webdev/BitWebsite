@@ -4,9 +4,10 @@ import './Events.css';
 import PlaceholderImage from '../PlaceholderImage';
 import EventRow from './EventRow';
 
-const PastEvents = () => {
-  // Past events data (moved from featured events)
-  const pastEvents = [
+const INITIAL_COUNT = 4;
+const PAGE_SIZE = 4;
+
+const pastEvents = [
     {
       id: 1,
       title: "BiT Intro Meeting",
@@ -99,30 +100,16 @@ const PastEvents = () => {
     }
   ];
 
-  // Modern event card component
-  const EventCard = ({ event }) => {
-    const [imgError, setImgError] = useState(false);
+const PastEvents = () => {
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+  const allShown = visibleCount >= pastEvents.length;
 
-    return (
-      <div className="event-card scale-in">
-        <div className="event-image">
-          {!imgError ? (
-            <img
-              src={event.image}
-              alt={event.title}
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <PlaceholderImage text={event.title} width="100%" height="100%" />
-          )}
-        </div>
-        <div className="overlay">
-          <h3>{event.title}</h3>
-          <p className="date-location">{event.date} | {event.location}</p>
-          <p className="description">{event.description}</p>
-        </div>
-      </div>
-    );
+  const handleShowMore = () => {
+    setVisibleCount(prev => Math.min(prev + PAGE_SIZE, pastEvents.length));
+  };
+ 
+  const handleShowAll = () => {
+    setVisibleCount(pastEvents.length);
   };
 
   return (
@@ -136,12 +123,23 @@ const PastEvents = () => {
 
       {/* Past Events Content */}
       <div className="events-content">
-        <h2 className="fade-in-up">All Past Events</h2>
+        <h2 className="fade-in-up">Past Events</h2>
         <div className="events-list">
-          {pastEvents.map((event, index) => (
+          {pastEvents.slice(0, visibleCount).map((event, index) => (
             <EventRow key={event.id} event={event} index={index} />
           ))}
         </div>
+ 
+        {!allShown && (
+          <div className="events-list-actions">
+            <button className="cta-button fade-in-up" onClick={handleShowMore}>
+              Show More
+            </button>
+            <button className="cta-button fade-in-up" onClick={handleShowAll}>
+              Show All
+            </button>
+          </div>
+        )}
       </div>
 
       {/* CTA Section */}

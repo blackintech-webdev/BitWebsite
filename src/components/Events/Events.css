@@ -432,6 +432,14 @@ hr {
   margin: 0 auto;
 }
 
+.events-list-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
 /* CTA Section */
 .events-cta {
   background: linear-gradient(135deg, rgba(75, 34, 122, 0.05), rgba(1, 151, 175, 0.05));
@@ -570,7 +578,9 @@ hr {
 }
 
 .social-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 12px 20px;
   background: linear-gradient(135deg, #E1306C, #C13584);
   color: white;
@@ -579,10 +589,6 @@ hr {
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.social-button i {
-  margin-right: 8px;
 }
 
 .social-button:hover {
