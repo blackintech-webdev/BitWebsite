@@ -320,7 +320,6 @@ hr {
   align-items: center;
   padding-bottom: 0;
   background-color: #f9f9fa;
-  min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -443,7 +442,7 @@ hr {
 /* CTA Section */
 .events-cta {
   background: linear-gradient(135deg, rgba(75, 34, 122, 0.05), rgba(1, 151, 175, 0.05));
-  padding: 80px 20px;
+  padding: 40px 20px;
   text-align: center;
   width: 100%;
   margin-top: 40px;
@@ -465,7 +464,7 @@ hr {
 
 .events-blog-cta {
   background: linear-gradient(135deg, rgba(75, 34, 122, 0.05), rgba(1, 151, 175, 0.05));
-  padding: 80px 20px;
+  padding: 40px 20px;
   text-align: center;
   width: 100%;
   margin-top: 0;

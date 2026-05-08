@@ -114,13 +114,6 @@ const PastEvents = () => {
 
   return (
     <div className="events-page page-transition">
-      {/* Hero Section */}
-      <div className="events-hero">
-        <h1 className="fade-in-up">Past Events</h1>
-        <p className="fade-in-up">Take a look at our previous events and see what we've accomplished together.</p>
-        <Link to="/events" className="cta-button fade-in-up">Back to Events</Link>
-      </div>
-
       {/* Past Events Content */}
       <div className="events-content">
         <h2 className="fade-in-up">Past Events</h2>
@@ -140,13 +133,6 @@ const PastEvents = () => {
             </button>
           </div>
         )}
-      </div>
-
-      {/* CTA Section */}
-      <div className="events-cta fade-in-up">
-        <h2>Host an Event With Us</h2>
-        <p>Interested in collaborating on an event? We're always looking for partners!</p>
-        <Link to="/get-involved" className="cta-button">Get in Touch</Link>
       </div>
     </div>
   );
