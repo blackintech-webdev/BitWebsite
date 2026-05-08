@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Events.css';
 import PlaceholderImage from '../PlaceholderImage';
+import EventRow from './EventRow';
 
 const PastEvents = () => {
   // Past events data (moved from featured events)
@@ -10,7 +11,6 @@ const PastEvents = () => {
       id: 1,
       title: "BiT Intro Meeting",
       date: "Monday, Sept 29th",
-      time: "6:30-7:30 PM",
       location: "DBH 1433",
       description: "Stop by to learn more about BiT, meet others interested in tech, and enjoy some free snacks!",
       image: "/images/events/fall 2025 intro meeting.jpg",
@@ -20,7 +20,6 @@ const PastEvents = () => {
       id: 2,
       title: "PHIT Info Session",
       date: "Monday, Oct 13th",
-      time: "6:30-7:30 PM",
       location: "ANTrepreneur Center",
       description: "Curious about the intersection of public health, data, technology, and informatics? Come learn more about PHIT and how it might align with your interests and goals!",
       image: "/images/events/Week 3 PHIT Collab.jpg",
@@ -30,7 +29,6 @@ const PastEvents = () => {
       id: 3,
       title: "BUILD A WEBSITE WORKSHOP",
       date: "Monday, October 6th",
-      time: "6:30-7:30 PM",
       location: "DBH 1433",
       description: "Learn the basics of HTML & CSS with live coding, snacks, and time to experiment! No experience needed, just bring your laptop!",
       image: "/images/events/FALL25 - Build a Website Workshop (Week 2) .jpg",
@@ -139,9 +137,9 @@ const PastEvents = () => {
       {/* Past Events Content */}
       <div className="events-content">
         <h2 className="fade-in-up">All Past Events</h2>
-        <div className="events-grid">
-          {pastEvents.map(event => (
-            <EventCard key={event.id} event={event} />
+        <div className="events-list">
+          {pastEvents.map((event, index) => (
+            <EventRow key={event.id} event={event} index={index} />
           ))}
         </div>
       </div>

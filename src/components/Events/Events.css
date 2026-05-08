@@ -423,6 +423,15 @@ hr {
   max-width: 1400px;
 }
 
+/* Event List containing rows */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* CTA Section */
 .events-cta {
   background: linear-gradient(135deg, rgba(75, 34, 122, 0.05), rgba(1, 151, 175, 0.05));
