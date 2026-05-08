@@ -2,23 +2,11 @@ import React, { useState } from "react";
 import PlaceholderImage from "../PlaceholderImage";
 import "./EventRow.css";
 
-const EventRow = ({ event, index }) => {
+const EventRow = ({ event }) => {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className={`event-row scale-in`}>
-      <div className="event-row__image-wrap">
-        {!imgError ? (
-          <img
-            src={event.image}
-            alt={event.title}
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <PlaceholderImage text={event.title} width="100%" height="100%" />
-        )}
-      </div>
-
+    <div className="event-row scale-in">
       <div className="event-row__info">
         <h3 className="event-row__title">{event.title}</h3>
 
@@ -70,6 +58,18 @@ const EventRow = ({ event, index }) => {
         </div>
 
         <p className="event-row__description">{event.description}</p>
+      </div>
+
+      <div className="event-row__image-wrap">
+        {!imgError ? (
+          <img
+            src={event.image}
+            alt={event.title}
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <PlaceholderImage text={event.title} width="100%" height="100%" />
+        )}
       </div>
     </div>
   );
