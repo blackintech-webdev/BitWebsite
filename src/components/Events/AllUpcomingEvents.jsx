@@ -7,13 +7,14 @@ const AllUpcomingEvents = () => {
   // Upcoming events data
   const upcomingEvents = [
     {
-      id: 1,
-      title: "BiT's 30 Minute App Challenge: BUILD NIGHT",
-      date: "May 4, 2026",
-      location: "DBH 1300",
-      description: "Join us for a hands-on event where teams receive a random prompt and must ideate, wireframe, and prototype a mini product using any tools they want!",
-      image: "",
-    }
+      id: 52,
+      title: "BiT Networking Dinner with AI Leadership!",
+      date: "May 14, 2026",
+      location: "ISEB 1300",
+      description:
+        "We are thrilled to invite you to our Networking Dinner with AI Leaders, an evening of conversation, connection, and a first-hand look at what’s happening in AI right now.",
+      image: "/images/events/event52.jpg"
+    },
   ];
 
   const EventCard = ({ event }) => {
