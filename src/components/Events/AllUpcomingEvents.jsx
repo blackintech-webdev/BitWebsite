@@ -6,18 +6,16 @@ import EventRow from "./EventRow";
 
 // Upcoming events data
 const upcomingEvents = [
-  {
-    id: 1,
-    title: "BiT TECH TALK: FROM IDEAS TO IMPACT",
-    date: "Monday, Oct 20th",
-    time: "6:30-7:30 PM",
-    location: "DBH 1433",
-    description:
-      "Hear firsthand from our guest speakers DeQuan Guillebeau (Founder of DataDrift) and Darcel Mugisha (Co-Founder of GenInnovation) about how they became founders of their own tech companies!",
-    image: "/images/events/FALL25 WEEK 4 EVENT.jpg",
-    url: "/events/tech-talk-ideas-impact",
-  },
-];
+    {
+      id: 52,
+      title: "BiT Networking Dinner with AI Leadership!",
+      date: "May 14, 2026",
+      location: "ISEB 1300",
+      description:
+        "We are thrilled to invite you to our Networking Dinner with AI Leaders, an evening of conversation, connection, and a first-hand look at what’s happening in AI right now.",
+      image: "/images/events/event52.jpg"
+    },
+  ];
 
 const AllUpcomingEvents = () => {
   return (
