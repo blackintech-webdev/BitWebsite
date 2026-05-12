@@ -8,33 +8,6 @@ const PastEvents = () => {
   const pastEvents = [
     {
       id: 1,
-      title: "BiT Intro Meeting",
-      date: "Monday, Sept 29th",
-      location: "DBH 1433",
-      description:
-        "Stop by to learn more about BiT, meet others interested in tech, and enjoy some free snacks!",
-      image: "/images/events/fall 2025 intro meeting.jpg",
-    },
-    {
-      id: 2,
-      title: "PHIT Info Session",
-      date: "Monday, Oct 13th",
-      location: "ANTrepreneur Center",
-      description:
-        "Curious about the intersection of public health, data, technology, and informatics? Come learn more about PHIT and how it might align with your interests and goals!",
-      image: "/images/events/Week 3 PHIT Collab.jpg",
-    },
-    {
-      id: 3,
-      title: "BUILD A WEBSITE WORKSHOP",
-      date: "Monday, October 6th",
-      location: "DBH 1433",
-      description:
-        "Learn the basics of HTML & CSS with live coding, snacks, and time to experiment! No experience needed, just bring your laptop!",
-      image: "/images/events/FALL25 - Build a Website Workshop (Week 2) .jpg",
-    },
-    {
-      id: 4,
       title: "Introducing Black In Tech",
       date: "January 13, 2025",
       location: "DBH 1042",
@@ -43,7 +16,7 @@ const PastEvents = () => {
       image: "/src/components/images/event1.jpg",
     },
     {
-      id: 5,
+      id: 2,
       title: "ICS Club Fair",
       date: "January 15, 2025",
       location: "DBH 6011",
@@ -52,7 +25,7 @@ const PastEvents = () => {
       image: "/src/components/images/event2.jpg",
     },
     {
-      id: 6,
+      id: 3,
       title: "Tech Talk: Tech Startups Panel",
       date: "January 27, 2025",
       location: "DBH 1420",
@@ -61,7 +34,7 @@ const PastEvents = () => {
       image: "/src/components/images/event3.jpg",
     },
     {
-      id: 7,
+      id: 4,
       title: "Mock Interviews Workshop",
       date: "February 3, 2025",
       location: "DBH 1420",
@@ -70,7 +43,7 @@ const PastEvents = () => {
       image: "/src/components/images/event4.jpg",
     },
     {
-      id: 8,
+      id: 5,
       title: "Tech Talk: UCI Alumni Panel",
       date: "February 10, 2025",
       location: "Student Center, Emerald Bay A",
@@ -79,7 +52,7 @@ const PastEvents = () => {
       image: "/src/components/images/event5.jpg",
     },
     {
-      id: 9,
+      id: 6,
       title: "Google Company Tour",
       date: "February 21, 2025",
       location: "Los Angeles",
@@ -88,7 +61,7 @@ const PastEvents = () => {
       image: "/src/components/images/event6.jpg",
     },
     {
-      id: 10,
+      id: 7,
       title: "Resume Building Workshop",
       date: "February 24, 2025",
       location: "DBH 1420",
@@ -97,7 +70,7 @@ const PastEvents = () => {
       image: "/src/components/images/event7.jpg",
     },
     {
-      id: 11,
+      id: 8,
       title: "Jeopardy Night",
       date: "March 31, 2025",
       location: "DBH 1431",
@@ -106,7 +79,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 12,
+      id: 9,
       title: "Elevator Pitch Workshop",
       date: "April 7, 2025",
       location: "DBH 1431",
@@ -115,7 +88,16 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 13,
+      id: 10,
+      title: "Women In Tech Speaker Panel",
+      date: "April 14, 2025",
+      location: "DBH 1431",
+      description:
+        "Join us for a collab between BIT & WIL with this exciting speaker panel as you learn more about Chealsea and Nyah’s experience in the tech world!",
+      image: "",
+    },
+    {
+      id: 11,
       title: "BiT x MAISS Technology Panel",
       date: "April 23, 2025",
       location: "SB1 2321",
@@ -124,7 +106,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 14,
+      id: 12,
       title: "Jollof Rice Fundraiser",
       date: "April 24, 2025",
       location: "Ring Road",
@@ -133,7 +115,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 15,
+      id: 13,
       title: "Bonfire Social",
       date: "May 2, 2025",
       location: "Corona Del Mar",
@@ -142,7 +124,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 16,
+      id: 14,
       title: "LinkedIn Workshop",
       date: "May 5, 2025",
       location: "DBH 1431",
@@ -151,7 +133,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 17,
+      id: 15,
       title: "Python Workshop",
       date: "May 12, 2025",
       location: "DBH 1431",
@@ -160,7 +142,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 18,
+      id: 16,
       title: "BiT x NSBE Microsoft Office Tour",
       date: "May 14, 2025",
       location: "Irvine Innovation Hub",
@@ -169,7 +151,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 19,
+      id: 17,
       title: "WICS x BiT Intern-taining Conversations",
       date: "May 19, 2025",
       location: "DBH 6011",
@@ -178,7 +160,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 20,
+      id: 18,
       title: "BiT Chipotle Fundraiser",
       date: "May 28, 2025",
       location: "4255 Campus Dr Irvine",
@@ -186,7 +168,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 21,
+      id: 19,
       title: "BiT Petr Drop",
       date: "May 29, 2025",
       location: "Stay tuned to our Instagram story!",
@@ -195,7 +177,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 22,
+      id: 20,
       title: "Smores by the Shore",
       date: "September 26, 2025",
       location: "Corona Del Mar Beach",
@@ -204,7 +186,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 23,
+      id: 21,
       title: "BiT Intro Meeting",
       date: "September 29, 2025",
       location: "DBH 1433",
@@ -213,7 +195,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 24,
+      id: 22,
       title: "Build a Website Workshop",
       date: "October 6, 2025",
       location: "DBH 1433",
@@ -222,7 +204,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 25,
+      id: 23,
       title: "BiT x PHIT 'A Healthy Byte of Innovation' Info Session",
       date: "October 13, 2025",
       location: "ANTrepreneur Center",
@@ -231,7 +213,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 26,
+      id: 24,
       title: "ShareTea Fundraiser",
       date: "October 13, 2025",
       location: "UTC ShareTea",
@@ -240,7 +222,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 27,
+      id: 25,
       title: "Google Office Tour",
       date: "October 17, 2025",
       location: "Google LA Corporate Campus",
@@ -249,7 +231,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 28,
+      id: 26,
       title: "BiT TECH TALK: FROM IDEAS TO IMPACT",
       date: "October 20, 2025",
       location: "DBH 1433",
@@ -258,7 +240,7 @@ const PastEvents = () => {
       image: "/images/events/FALL25 WEEK 4 EVENT.jpg",
     },
     {
-      id: 29,
+      id: 27,
       title: "Brain Bytes and Prizes",
       date: "November 3, 2025",
       location: "DBH 1433",
@@ -267,7 +249,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 30,
+      id: 28,
       title: "Technical Workshop: Embedded Systems",
       date: "November 10, 2025",
       location: "DBH 1433",
@@ -276,7 +258,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 31,
+      id: 29,
       title: "CoStar Group Office Tour",
       date: "November 18, 2025",
       location: "CoStar Group Irvine Headquarters",
@@ -285,7 +267,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 32,
+      id: 30,
       title: "Sambosa Fundraiser",
       date: "November 20, 2025",
       location: "Ring Road",
@@ -294,7 +276,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 33,
+      id: 31,
       title:
         "BiT x BMA - BUILT DIFFERENT: INTRO TO PRODUCT / PROJECT MANAGEMENT",
       date: "November 20, 2025",
@@ -304,7 +286,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 34,
+      id: 32,
       title: "Multiverse Petr Drop",
       date: "November 24, 2025",
       location: "To be announced on our Instagram Story",
@@ -313,7 +295,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 35,
+      id: 33,
       title: "Cyber x WiCyS x BiT CTF Workshop / Competition",
       date: "January 12, 2026",
       location: "ISEB 1200",
@@ -322,7 +304,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 36,
+      id: 34,
       title: "FAANG Networking Dinner",
       date: "January 21, 2026",
       location: "TBA",
@@ -331,7 +313,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 37,
+      id: 35,
       title: "Obsidian Enterntainment Meet & Greet",
       date: "January 26, 2026",
       location: "DBH 1300",
@@ -340,7 +322,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 38,
+      id: 36,
       title: "Study Jam",
       date: "February 2, 2026",
       location: "DBH 1300",
@@ -349,7 +331,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 39,
+      id: 37,
       title: "Chipotle Fundraiser",
       date: "February 3, 2026",
       location: "UTC Chipotle",
@@ -357,7 +339,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 40,
+      id: 38,
       title: "Netflix Office Tour",
       date: "February 4, 2026",
       location: "Netflix",
@@ -366,7 +348,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 41,
+      id: 39,
       title: "Celebrating Black Innovators",
       date: "February 10, 2026",
       location: "Colloquia (EH 2430)",
@@ -375,7 +357,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 42,
+      id: 40,
       title:
         "DAUCI x BiT Professional Speaker Panel - Diversifying Design & Tech",
       date: "February 23, 2026",
@@ -385,7 +367,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 43,
+      id: 41,
       title: "PETR Drop",
       date: "March 12, 2026",
       location: "TBA on our Instagram",
@@ -394,7 +376,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 44,
+      id: 42,
       title: "AI For Productivity",
       date: "March 30, 2026",
       location: "DBH 1300",
@@ -403,7 +385,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 45,
+      id: 43,
       title: "Exploring APIs",
       date: "April 6, 2026",
       location: "DBH 1300",
@@ -412,7 +394,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 46,
+      id: 44,
       title: "Obsidian Entertainment Office Tour",
       date: "April 8, 2026",
       location: "Obsidian Entertainment Office",
@@ -421,7 +403,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 47,
+      id: 45,
       title: "UI/UX Do's and Don'ts",
       date: "April 13, 2026",
       location: "DBH 1300",
@@ -430,7 +412,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 48,
+      id: 46,
       title: "BiT Celebrate UCI",
       date: "April 18, 2026",
       location: "Engineering Plaza",
@@ -438,7 +420,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 49,
+      id: 47,
       title: "Git & GitHub Workshop",
       date: "April 20, 2026",
       location: "DBH 1300",
@@ -447,7 +429,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 50,
+      id: 48,
       title: "BiT Study Jam",
       date: "April 27, 2026",
       location: "DBH 1300",
@@ -455,7 +437,7 @@ const PastEvents = () => {
       image: "",
     },
     {
-      id: 51,
+      id: 49,
       title: "Pie the Board Fundraiser",
       date: "April 30, 2026",
       location: "Aldrich Park outside the Phoenix Food Court",
