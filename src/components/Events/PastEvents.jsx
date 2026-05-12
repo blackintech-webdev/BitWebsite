@@ -445,6 +445,24 @@ const PastEvents = () => {
         "Meet us right outside the Phoenix Food Court in Aldrich Park and Pie the Board!",
       image: "/images/events/event49.jpg"
     },
+    {
+      id: 50,
+      title: "BiT's 30 Minute App Challenge: Build Night",
+      date: "May 4, 2026",
+      location: "DBH 1300",
+      description:
+        "Join us in a hands-on event where teams receive a random prompt and must ideate, wireframe, and prototype a mini product using any tools they want!",
+      image: "/images/events/event50.jpg"
+    },
+    {
+      id: 51,
+      title: "Cloud Computing: AWS, Azure & Beyond",
+      date: "May 11, 2026",
+      location: "DBH 1300",
+      description:
+        "Join us on a session that breaks down cloud computing from zero: what it is, why companies use it, and how the big three platforms (AWS, Azure, Google Cloud) compare.",
+      image: "/images/events/event51.jpg"
+    },
   ];
 
   // Modern event card component
