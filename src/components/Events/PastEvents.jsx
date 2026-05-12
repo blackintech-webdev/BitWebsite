@@ -13,7 +13,7 @@ const PastEvents = () => {
       location: "DBH 1042",
       description:
         "Get to know the board, enjoy pizza, and participate in brain teaser games. Don't forget to RSVP via our linktree!",
-      image: "/src/components/images/event1.jpg",
+      image: "/images/events/event1.jpg",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const PastEvents = () => {
       location: "DBH 6011",
       description:
         "Join us at the ICS Club Fair to learn about Black in Tech at UCI and how to get involved.",
-      image: "/src/components/images/event2.jpg",
+      image: "/images/events/event2.jpg",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const PastEvents = () => {
       location: "DBH 1420",
       description:
         "Hear from Charles Sine (Inclusive Health Founder) and Gregg Klang (FemTech Founder) about their experiences in the startup ecosystem.",
-      image: "/src/components/images/event3.jpg",
+      image: "/images/events/event3.jpg",
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const PastEvents = () => {
       location: "DBH 1420",
       description:
         "Gain insights on how to tackle industry technical & behavioral interview questions with Walter Myers III and Nick Bell from Microsoft.",
-      image: "/src/components/images/event4.jpg",
+      image: "/images/events/event4.jpg",
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ const PastEvents = () => {
       location: "Student Center, Emerald Bay A",
       description:
         "Connect with UCI alumni including Anthony Mays (Founder/Career Coach), Pierce Taylor (Software Engineer at Google), and Briana Jallow (Technology Consultant).",
-      image: "/src/components/images/event5.jpg",
+      image: "/images/events/event5.jpg",
     },
     {
       id: 6,
@@ -58,7 +58,7 @@ const PastEvents = () => {
       location: "Los Angeles",
       description:
         "Join us for an exclusive tour of Google's Los Angeles office. Transportation will be provided for this half-day experience.",
-      image: "/src/components/images/event6.jpg",
+      image: "/images/events/event6.jpg",
     },
     {
       id: 7,
@@ -67,7 +67,7 @@ const PastEvents = () => {
       location: "DBH 1420",
       description:
         "Learn how to optimize your resume and get peer-to-peer review with Walter Myers III and Kamika Dillard from Microsoft.",
-      image: "/src/components/images/event7.jpg",
+      image: "/images/events/event7.jpg",
     },
     {
       id: 8,
@@ -76,7 +76,7 @@ const PastEvents = () => {
       location: "DBH 1431",
       description:
         "Compete with other BIT members by figuring out clues across various categories and testing your knowledge.",
-      image: "",
+      image: "/images/events/event8.jpg",
     },
     {
       id: 9,
@@ -85,7 +85,7 @@ const PastEvents = () => {
       location: "DBH 1431",
       description:
         "Come join us for our Elevator Pitch Workshop, where you’ll have the opportunity to test and refine your ability to pitch yourself in a concise, compelling way!",
-      image: "",
+      image: "/images/events/event9.jpg",
     },
     {
       id: 10,
@@ -94,7 +94,7 @@ const PastEvents = () => {
       location: "DBH 1431",
       description:
         "Join us for a collab between BIT & WIL with this exciting speaker panel as you learn more about Chealsea and Nyah’s experience in the tech world!",
-      image: "",
+      image: "/images/events/event10.jpg",
     },
     {
       id: 11,
@@ -103,7 +103,7 @@ const PastEvents = () => {
       location: "SB1 2321",
       description:
         "Join us for an exciting Technology Panel hosted in collaboration with Black in Tech @ UCI and MAISS! Hear from trailblazing professionals in Software Engineering and Product Management.",
-      image: "",
+      image: "/images/events/event11.jpg",
     },
     {
       id: 12,
@@ -112,7 +112,7 @@ const PastEvents = () => {
       location: "Ring Road",
       description:
         "Come out and support BIT’s first-ever fundraiser! Stop by our booth to grab a plate of some delicious Jollof rice!",
-      image: "",
+      image: "/images/events/event12.jpg",
     },
     {
       id: 13,
@@ -148,7 +148,7 @@ const PastEvents = () => {
       location: "Irvine Innovation Hub",
       description:
         "Join us for an exclusive student tour of the Microsoft Irvine Innovation Hub with BiT and NSBE at UCI.",
-      image: "",
+      image: "/images/events/event16.jpg",
     },
     {
       id: 17,
