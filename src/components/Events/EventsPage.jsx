@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Events.css';
+import AllUpcomingEvents from './AllUpcomingEvents';
+import PastEvents from './PastEvents';
 
 const EventsPage = () => {
   return (
@@ -8,11 +10,10 @@ const EventsPage = () => {
       <div className="events-hero">
         <h1 className="fade-in-up">Events</h1>
         <p className="fade-in-up">Join us at our upcoming events to connect, learn, and grow together.</p>
-        <div className="events-hero-buttons">
-          <Link to="/events/upcoming" className="cta-button fade-in-up">View All Upcoming Events</Link>
-          <Link to="/events/past" className="cta-button fade-in-up">View All Past Events</Link>
-        </div>
       </div>
+
+      <AllUpcomingEvents />
+      <PastEvents />
 
       <div className="events-cta fade-in-up">
         <h2>Host an Event With Us</h2>

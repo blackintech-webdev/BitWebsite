@@ -1,0 +1,127 @@
+/* EventRow.css */
+
+.event-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.event-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(75, 34, 122, 0.12);
+}
+
+/* ── Info Side (left) ── */
+.event-row__info {
+  flex: 1;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;            
+  min-width: 0;
+  justify-content: center
+}
+
+/* ── Title ── */
+.event-row__title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  text-align: center;
+}
+
+/* ── Meta (date / time / location) ── */
+.event-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;     
+}
+
+.event-row__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.event-row__meta-item svg {
+  width: 14px;
+  height: 14px;
+  color: #4B227A;
+  flex-shrink: 0;
+}
+
+/* ── Description ── */
+.event-row__description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.65;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ── Image Side ── */
+.event-row__image-wrap {
+  flex: 0 0 280px;
+  width: 280px;
+  align-self: stretch;
+  overflow: hidden;
+  background: #f0eef5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-row__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.event-row:hover .event-row__image-wrap img {
+  transform: scale(1.03);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .event-row {
+    flex-direction: column-reverse; /* image on top on mobile */
+  }
+
+  .event-row__image-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: 260px;
+  }
+
+  .event-row__image-wrap img {
+    max-height: 260px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .event-row__info {
+    padding: 24px 20px;
+  }
+
+  .event-row__title {
+    font-size: 1.2rem;
+  }
+}

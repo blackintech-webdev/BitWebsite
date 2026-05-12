@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Events.css';
 import PlaceholderImage from '../PlaceholderImage';
+import EventRow from './EventRow';
 
-const PastEvents = () => {
-  // Past events data (moved from featured events)
-  const pastEvents = [
+const INITIAL_COUNT = 4;
+const PAGE_SIZE = 4;
+
+const pastEvents = [
     {
       id: 1,
       title: "BiT Intro Meeting",
       date: "Monday, Sept 29th",
-      time: "6:30-7:30 PM",
       location: "DBH 1433",
       description: "Stop by to learn more about BiT, meet others interested in tech, and enjoy some free snacks!",
       image: "/images/events/fall 2025 intro meeting.jpg",
@@ -20,7 +21,6 @@ const PastEvents = () => {
       id: 2,
       title: "PHIT Info Session",
       date: "Monday, Oct 13th",
-      time: "6:30-7:30 PM",
       location: "ANTrepreneur Center",
       description: "Curious about the intersection of public health, data, technology, and informatics? Come learn more about PHIT and how it might align with your interests and goals!",
       image: "/images/events/Week 3 PHIT Collab.jpg",
@@ -30,7 +30,6 @@ const PastEvents = () => {
       id: 3,
       title: "BUILD A WEBSITE WORKSHOP",
       date: "Monday, October 6th",
-      time: "6:30-7:30 PM",
       location: "DBH 1433",
       description: "Learn the basics of HTML & CSS with live coding, snacks, and time to experiment! No experience needed, just bring your laptop!",
       image: "/images/events/FALL25 - Build a Website Workshop (Week 2) .jpg",
@@ -101,56 +100,39 @@ const PastEvents = () => {
     }
   ];
 
-  // Modern event card component
-  const EventCard = ({ event }) => {
-    const [imgError, setImgError] = useState(false);
+const PastEvents = () => {
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+  const allShown = visibleCount >= pastEvents.length;
 
-    return (
-      <div className="event-card scale-in">
-        <div className="event-image">
-          {!imgError ? (
-            <img
-              src={event.image}
-              alt={event.title}
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <PlaceholderImage text={event.title} width="100%" height="100%" />
-          )}
-        </div>
-        <div className="overlay">
-          <h3>{event.title}</h3>
-          <p className="date-location">{event.date} | {event.location}</p>
-          <p className="description">{event.description}</p>
-        </div>
-      </div>
-    );
+  const handleShowMore = () => {
+    setVisibleCount(prev => Math.min(prev + PAGE_SIZE, pastEvents.length));
+  };
+ 
+  const handleShowAll = () => {
+    setVisibleCount(pastEvents.length);
   };
 
   return (
     <div className="events-page page-transition">
-      {/* Hero Section */}
-      <div className="events-hero">
-        <h1 className="fade-in-up">Past Events</h1>
-        <p className="fade-in-up">Take a look at our previous events and see what we've accomplished together.</p>
-        <Link to="/events" className="cta-button fade-in-up">Back to Events</Link>
-      </div>
-
       {/* Past Events Content */}
       <div className="events-content">
-        <h2 className="fade-in-up">All Past Events</h2>
-        <div className="events-grid">
-          {pastEvents.map(event => (
-            <EventCard key={event.id} event={event} />
+        <h2 className="fade-in-up">Past Events</h2>
+        <div className="events-list">
+          {pastEvents.slice(0, visibleCount).map((event, index) => (
+            <EventRow key={event.id} event={event} index={index} />
           ))}
         </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="events-cta fade-in-up">
-        <h2>Host an Event With Us</h2>
-        <p>Interested in collaborating on an event? We're always looking for partners!</p>
-        <Link to="/get-involved" className="cta-button">Get in Touch</Link>
+ 
+        {!allShown && (
+          <div className="events-list-actions">
+            <button className="cta-button fade-in-up" onClick={handleShowMore}>
+              Show More
+            </button>
+            <button className="cta-button fade-in-up" onClick={handleShowAll}>
+              Show All
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
