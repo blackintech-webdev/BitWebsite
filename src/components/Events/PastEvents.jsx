@@ -121,7 +121,7 @@ const PastEvents = () => {
       location: "Corona Del Mar",
       description:
         "Join us for an evening of warmth, laughter, and connection at our Bonfire Social!",
-      image: "",
+      image: "/images/events/event13.jpg",
     },
     {
       id: 14,
@@ -130,7 +130,7 @@ const PastEvents = () => {
       location: "DBH 1431",
       description:
         "Join us for an engaging LinkedIn Workshop where we’ll walk you through practical tips and proven strategies to elevate your profile!",
-      image: "",
+      image: "/images/events/event14.jpg",
     },
     {
       id: 15,
@@ -139,7 +139,7 @@ const PastEvents = () => {
       location: "DBH 1431",
       description:
         "Join us for our upcoming Tech Workshop, where we’ll take a deep dive into Python programming.",
-      image: "",
+      image: "/images/events/event15.jpg",
     },
     {
       id: 16,
@@ -157,7 +157,7 @@ const PastEvents = () => {
       location: "DBH 6011",
       description:
         "Curious about the internship experience? Join WICS and BiT to talk to students who have previously interned for various companies!",
-      image: "",
+      image: "/images/events/event17.jpg",
     },
     {
       id: 18,
@@ -165,7 +165,7 @@ const PastEvents = () => {
       date: "May 28, 2025",
       location: "4255 Campus Dr Irvine",
       description: "Support our club while enjoying some yummy Chipotle!",
-      image: "",
+      image: "/images/events/event18.jpg"
     },
     {
       id: 19,
@@ -174,7 +174,7 @@ const PastEvents = () => {
       location: "Stay tuned to our Instagram story!",
       description:
         "Don’t miss out on this special edition sticker. Keep your eyes on our Instagram story for the drop location!",
-      image: "",
+      image: "/images/events/event19.jpg"
     },
     {
       id: 20,
@@ -183,7 +183,7 @@ const PastEvents = () => {
       location: "Corona Del Mar Beach",
       description:
         "Come to explore the different clubs, meet new friends, and eat yummy food!",
-      image: "",
+      image: "/images/events/event20.jpg"
     },
     {
       id: 21,
@@ -192,7 +192,7 @@ const PastEvents = () => {
       location: "DBH 1433",
       description:
         "Stop by to learn more about BiT, meet others interested in tech, and enjoy some free snacks!",
-      image: "",
+      image: "/images/events/event21.jpg"
     },
     {
       id: 22,
@@ -201,7 +201,7 @@ const PastEvents = () => {
       location: "DBH 1433",
       description:
         "Learn the basics of HTML & CSS with live coding, snacks, and time to experiment!",
-      image: "",
+      image: "/images/events/event22.jpg"
     },
     {
       id: 23,
@@ -210,7 +210,7 @@ const PastEvents = () => {
       location: "ANTrepreneur Center",
       description:
         "Come learn more about PHIT and how it might align with your interests and goals!",
-      image: "",
+      image: "/images/events/event23.jpg"
     },
     {
       id: 24,
@@ -219,7 +219,7 @@ const PastEvents = () => {
       location: "UTC ShareTea",
       description:
         "Craving boba? Join us after our BiT x PHIT info meeting to grab a drink and support BiT!",
-      image: "",
+      image: "/images/events/event24.jpg"
     },
     {
       id: 25,
@@ -228,7 +228,7 @@ const PastEvents = () => {
       location: "Google LA Corporate Campus",
       description:
         "Join us for an exclusive tour of the Google LA Corporate Campus!",
-      image: "",
+      image: "/images/events/event25.jpg"
     },
     {
       id: 26,
@@ -237,7 +237,7 @@ const PastEvents = () => {
       location: "DBH 1433",
       description:
         "Hear firsthand from our guest speakers DeQuan Guillebeau (Founder of DataDrift) and Darcel Mugisha (Co-Founder of GenInnovation) about how they became founders of their own tech companies!",
-      image: "/images/events/FALL25 WEEK 4 EVENT.jpg",
+      image: "/images/events/event26.jpg"
     },
     {
       id: 27,
@@ -246,7 +246,7 @@ const PastEvents = () => {
       location: "DBH 1433",
       description:
         "Come out with friends or meet new people as you compete for amazing prizes!",
-      image: "",
+      image: "/images/events/event27.jpg"
     },
     {
       id: 28,
@@ -255,7 +255,7 @@ const PastEvents = () => {
       location: "DBH 1433",
       description:
         "Come explore the intersection of hardware and software, featuring a live demo!",
-      image: "",
+      image: "/images/events/event28.jpg"
     },
     {
       id: 29,
@@ -264,7 +264,7 @@ const PastEvents = () => {
       location: "CoStar Group Irvine Headquarters",
       description:
         "Join us for an exclusive tour of the CoStar Group's Irvine headquarters!",
-      image: "",
+      image: "/images/events/event29.jpg"
     },
     {
       id: 30,
@@ -273,7 +273,7 @@ const PastEvents = () => {
       location: "Ring Road",
       description:
         "We’ll be selling sambosas next week on Ring Road! Come get one for yourself or more to share with friends, or just stop by to say hi!",
-      image: "",
+      image: "/images/events/event30.jpg"
     },
     {
       id: 31,
@@ -283,7 +283,7 @@ const PastEvents = () => {
       location: "MPAA Executive Commons",
       description:
         "Come learn about product / project management and practice your pitching skills!",
-      image: "",
+      image: "/images/events/event31.jpg"
     },
     {
       id: 32,
@@ -292,7 +292,7 @@ const PastEvents = () => {
       location: "To be announced on our Instagram Story",
       description:
         "Come join us for a PETR DROP! Keep an eye out for the location on our Instagram!",
-      image: "",
+      image: "/images/events/event32.jpg"
     },
     {
       id: 33,
@@ -301,7 +301,7 @@ const PastEvents = () => {
       location: "ISEB 1200",
       description:
         "Join us for a Capture the Flag competition in collaboration with Cyber and Women in Cybersecurity!",
-      image: "",
+      image: "/images/events/event33.jpg"
     },
     {
       id: 34,
@@ -310,7 +310,7 @@ const PastEvents = () => {
       location: "TBA",
       description:
         "At our FAANG panel, you’ll get to connect with professionals from Meta, Apple, Amazon, Netflix, and Google and learn about careers in software engineering, UX/UI, and web development.",
-      image: "",
+      image: "/images/events/event34.jpg"
     },
     {
       id: 35,
@@ -319,7 +319,7 @@ const PastEvents = () => {
       location: "DBH 1300",
       description:
         "Join us as we host a panel with a representative from Obsidian Entertainment!",
-      image: "",
+      image: "/images/events/event35.jpg"
     },
     {
       id: 36,
@@ -328,7 +328,7 @@ const PastEvents = () => {
       location: "DBH 1300",
       description:
         "Pull up and study with us as we conquer exam season together!",
-      image: "",
+      image: "/images/events/event36.jpg"
     },
     {
       id: 37,
@@ -336,7 +336,7 @@ const PastEvents = () => {
       date: "February 3, 2026",
       location: "UTC Chipotle",
       description: "Join us at Chipotle and make your meal count!",
-      image: "",
+      image: "/images/events/event37.jpg"
     },
     {
       id: 38,
@@ -345,7 +345,7 @@ const PastEvents = () => {
       location: "Netflix",
       description:
         "Join us for an exclusive behind-the-scenes look at Netflix and explore careers in tech and entertainment.",
-      image: "",
+      image: "/images/events/event38.jpg"
     },
     {
       id: 39,
@@ -354,7 +354,7 @@ const PastEvents = () => {
       location: "Colloquia (EH 2430)",
       description:
         "Compete against fellow NSBE and BiT members for prizes, in a game night highlighting Black innovation in honor of Black History Month!",
-      image: "",
+      image: "/images/events/event39.jpg"
     },
     {
       id: 40,
@@ -364,7 +364,7 @@ const PastEvents = () => {
       location: "UTC Chipotle",
       description:
         "Join Design at UCI and BiT to learn more about amplifying underrepresented voices, especially within the the design and tech industries!",
-      image: "",
+      image: "/images/events/event40.jpg"
     },
     {
       id: 41,
@@ -373,7 +373,7 @@ const PastEvents = () => {
       location: "TBA on our Instagram",
       description:
         "Keep an eye out on our Instagram for the location of this next PETR DROP!",
-      image: "",
+      image: "/images/events/event41.jpg"
     },
     {
       id: 42,
@@ -382,7 +382,7 @@ const PastEvents = () => {
       location: "DBH 1300",
       description:
         "Learn how LLMs and AI are changing the landscape of tech and how you can leverage them to maximize efficiency.",
-      image: "",
+      image: "/images/events/event42.jpg"
     },
     {
       id: 43,
@@ -391,7 +391,7 @@ const PastEvents = () => {
       location: "DBH 1300",
       description:
         "Curious about what really powers your favorite apps? Come tap into the world of APIs with us!",
-      image: "",
+      image: "/images/events/event43.jpg"
     },
     {
       id: 44,
@@ -400,7 +400,7 @@ const PastEvents = () => {
       location: "Obsidian Entertainment Office",
       description:
         "Join us for an exclusive office tour of Obsidian Entertainment and get a behind-the-scenes look at one of the industry’s leading studios!",
-      image: "",
+      image: "/images/events/event44.jpg"
     },
     {
       id: 45,
@@ -409,7 +409,7 @@ const PastEvents = () => {
       location: "DBH 1300",
       description:
         "Whether you’re new to design or looking to sharpen your skills, this session will break down the key differences between UI & UX and help you spot (and avoid) common design mistakes!",
-      image: "",
+      image: "/images/events/event45.jpg"
     },
     {
       id: 46,
@@ -417,7 +417,7 @@ const PastEvents = () => {
       date: "April 18, 2026",
       location: "Engineering Plaza",
       description: "Come find us at Celebrate UCI and pick up some BiT swag!",
-      image: "",
+      image: "/images/events/event46.jpg"
     },
     {
       id: 47,
@@ -426,7 +426,7 @@ const PastEvents = () => {
       location: "DBH 1300",
       description:
         "Join us as we’ll cover branching, merging, pull requests, and resolving merge conflicts through team challenges!",
-      image: "",
+      image: "/images/events/event47.jpg"
     },
     {
       id: 48,
@@ -434,7 +434,7 @@ const PastEvents = () => {
       date: "April 27, 2026",
       location: "DBH 1300",
       description: "Come join us for our Study Jam and get that A+!",
-      image: "",
+      image: "/images/events/event48.jpg",
     },
     {
       id: 49,
@@ -443,7 +443,7 @@ const PastEvents = () => {
       location: "Aldrich Park outside the Phoenix Food Court",
       description:
         "Meet us right outside the Phoenix Food Court in Aldrich Park and Pie the Board!",
-      image: "",
+      image: "/images/events/event49.jpg"
     },
   ];
 
