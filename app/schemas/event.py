@@ -7,11 +7,15 @@ class EventCreate(BaseModel):
     name: str
     date_time: datetime
     location: Optional[str] = None 
+    description: Optional[str] = None
+    image: Optional[str] = None
 
 class EventUpdate(BaseModel):
     name: Optional[str] = None
     date_time: Optional[datetime] = None
     location: Optional[str] = None
+    description: Optional[str] = None
+    image: Optional[str] = None
 
 class EventOut(EventCreate):
     id: UUID
