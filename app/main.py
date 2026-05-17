@@ -1,11 +1,21 @@
 from fastapi import FastAPI
-from app.routers import board_members
-from app.routers import events
+from app.routers import board_members, events, sponsors
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="BIT UCI API",
     swagger_ui_parameters={"persistAuthorization": True},
 )
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 def custom_openapi():
     if app.openapi_schema:
@@ -32,3 +42,4 @@ app.openapi = custom_openapi
 
 app.include_router(board_members.router)
 app.include_router(events.router)
+app.include_router(sponsors.router)

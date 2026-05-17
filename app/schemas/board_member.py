@@ -10,6 +10,7 @@ class BoardMemberCreate(BaseModel):
     is_past: bool = False
     linkedin_url: Optional[str] = None
     photo_url: Optional[str] = None
+    display_order: Optional[int] = None
 
 
 class BoardMemberUpdate(BaseModel):
