@@ -12,6 +12,11 @@ def get_events():
     res = supabase_admin.table("events").select("*").execute()
     return res.data
 
+# GET latest 5 events sorted by date — public
+@router.get("/get-latest-events", response_model=List[EventOut])
+def get_latest_events():
+    res = supabase.table("events").select("*").order("date_time", desc=False).limit(5).execute()
+    return res.data
 
 # GET one — public
 @router.get("/{event_id}", response_model=EventOut)
