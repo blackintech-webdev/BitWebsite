@@ -34,9 +34,6 @@ const PastEvents = () => {
           setHasMore(false);
         }
       } else {
-        // Edge Case: If there are 5 upcoming events, we display 0 past events initially.
-        // But we still need to know if the buttons should be visible! 
-        // We fetch 1 event silently just to see if the database has past events.
         const checkData = await fetchPaginatedPastEvents(1, 0);
         if (checkData.length === 0) {
           setHasMore(false);
@@ -52,12 +49,10 @@ const PastEvents = () => {
     setIsFetchingMore(true);
     
     const currentOffset = pastEvents.length;
-    // For subsequent clicks, we always grab 4 (PAGE_SIZE)
     const newEvents = await fetchPaginatedPastEvents(PAGE_SIZE, currentOffset);
     
     setPastEvents((prev) => [...prev, ...newEvents]);
     
-    // If the database returned fewer than 4, we've hit the end
     if (newEvents.length < PAGE_SIZE) {
       setHasMore(false);
     }
@@ -68,7 +63,6 @@ const PastEvents = () => {
     setIsFetchingMore(true);
     const currentOffset = pastEvents.length;
     
-    // Fetch a large number to grab everything remaining
     const remainingEvents = await fetchPaginatedPastEvents(1000, currentOffset);
     
     setPastEvents((prev) => [...prev, ...remainingEvents]);
@@ -88,7 +82,6 @@ const PastEvents = () => {
     );
   }
 
-  // If there are zero past events AND no more to fetch, don't render the section
   if (pastEvents.length === 0 && !hasMore) return null;
 
   return (
@@ -102,7 +95,6 @@ const PastEvents = () => {
           ))}
         </div>
 
-        {/* Buttons disappear permanently when hasMore becomes false */}
         {hasMore && (
           <div className="events-list-actions">
             <button 
