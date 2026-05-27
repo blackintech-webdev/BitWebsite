@@ -1,6 +1,6 @@
 from fastapi import FastAPI
+from app.routers import board_members, events, sponsors
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import board_members
 
 app = FastAPI(
     title="BIT UCI API",
@@ -41,3 +41,5 @@ def custom_openapi():
 app.openapi = custom_openapi
 
 app.include_router(board_members.router)
+app.include_router(events.router)
+app.include_router(sponsors.router)

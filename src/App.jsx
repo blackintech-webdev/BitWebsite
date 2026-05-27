@@ -20,8 +20,6 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="events" element={<EventsPage />} />
-          <Route path="events/upcoming" element={<AllUpcomingEvents />} />
-          <Route path="events/past" element={<PastEvents />} />
           <Route path="resources" element={<ResourcesPage />} />
           <Route path="get-involved" element={<GetInvolved />} />
           <Route path="volunteer-opportunities" element={<BoardResponsibilities />} />

@@ -24,8 +24,6 @@ const Footer = () => {
             <h4>Events</h4>
             <ul>
               <li><Link to="/events">All Events</Link></li>
-              <li><Link to="/events/upcoming">Upcoming Events</Link></li>
-              <li><Link to="/events/past">Past Events</Link></li>
               <li><Link to="/get-involved">Host an Event</Link></li>
             </ul>
           </div>
