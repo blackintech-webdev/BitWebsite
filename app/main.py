@@ -17,6 +17,11 @@ app.add_middleware(
 )
 
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
