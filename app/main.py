@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from app.routers import board_members, events, sponsors
 from fastapi.middleware.cors import CORSMiddleware
@@ -7,14 +9,34 @@ app = FastAPI(
     swagger_ui_parameters={"persistAuthorization": True},
 )
 
+ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
+
+if ENVIRONMENT == "production":
+    allowed_origins = [
+        "https://bit.ics.uci.edu",
+        "https://www.bit.ics.uci.edu",
+    ]
+else:
+    allowed_origins = [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:4173",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:4173",
+    ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 
 def custom_openapi():
@@ -37,6 +59,7 @@ def custom_openapi():
             method["security"] = [{"BearerAuth": []}]
     app.openapi_schema = schema
     return schema
+
 
 app.openapi = custom_openapi
 

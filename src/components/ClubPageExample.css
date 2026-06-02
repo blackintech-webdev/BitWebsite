@@ -141,6 +141,15 @@
   flex: 1;
 }
 
+.partners-section .info-content {
+  justify-content: center;
+  text-align: center;
+}
+
+.partners-section .info-text {
+  max-width: 800px;
+}
+
 .info-text h2 {
   font-size: 2.5rem;
   color: #000 !important;
