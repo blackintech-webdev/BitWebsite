@@ -4,13 +4,15 @@ import "./ClubPageExample.css";
 import PlaceholderImage from "./PlaceholderImage";
 import LinkedInImage from "../../public/images/icons/linkedin.svg";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ClubPageExample = () => {
   const [boardMembers, setBoardMembers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/board-members/")
+    fetch(`${API_URL}/board-members/`)  
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch board members");
         return res.json();
