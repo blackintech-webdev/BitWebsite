@@ -1,6 +1,8 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const fetchPaginatedPastEvents = async (limit = 5, offset = 0) => {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/events/get-past-events?limit=${limit}&offset=${offset}`);
+    const response = await fetch(`${API_URL}/events/get-past-events?limit=${limit}&offset=${offset}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
