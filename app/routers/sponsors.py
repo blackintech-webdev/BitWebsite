@@ -12,7 +12,7 @@ router = APIRouter(prefix="/sponsors", tags=["Sponsors"])
 @router.get("/get-all-sponsors", response_model = List[SponsorOut])
 def get_all_sponsors():
     # Fetch all data from the supabase sponsors table
-    get_all_sponsors_api_response = supabase.table("sponsors").select("*").execute()
+    get_all_sponsors_api_response = supabase.table("sponsors").select("*").order("name").execute()
     return get_all_sponsors_api_response.data
 
 # Get A Specific Sponsor - PUBLIC request(no auth needed)

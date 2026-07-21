@@ -1,46 +1,31 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Partners.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const PartnersPage = () => {
-  // Current sponsors/partners
-  const currentSponsors = [
-    {
-      name: "CoStar Group",
-      logo: "/images/partners/costar-logo.svg",
-      website: "https://www.costar.com"
-    },
-    {
-      name: "Google",
-      logo: "/images/partners/google-logo.svg",
-      website: "https://www.google.com"
-    },
-    {
-      name: "Microsoft",
-      logo: "/images/partners/microsoft-logo.svg",
-      website: "https://www.microsoft.com"
-    },
-    {
-      name: "Northrop Grumman",
-      logo: "/images/partners/northrop-grumman-logo.svg",
-      website: "https://www.northropgrumman.com"
-    },
-    {
-      name: "PwC",
-      logo: "/images/partners/pwc-logo.svg",
-      website: "https://www.pwc.com"
-    },
-    {
-      name: "SOAR office UCI",
-      logo: "/images/partners/soar-logo.svg",
-      website: "https://soar.uci.edu"
-    },
-    {
-      name: "UCI ICS",
-      logo: "/images/partners/uci-ics-logo.svg",
-      website: "https://www.ics.uci.edu"
-    }
-  ];
+  const [sponsors, setSponsors] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+  fetch(`${API_URL}/sponsors/get-all-sponsors`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to fetch sponsors");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      setSponsors(data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      setError(err.message);
+      setLoading(false);
+    });
+}, []);
 
   // Sponsorship tiers
   const sponsorshipTiers = [
@@ -92,13 +77,13 @@ const PartnersPage = () => {
   const SponsorLogo = ({ sponsor }) => (
     <div className="sponsor-logo-item">
       <a 
-        href={sponsor.website} 
+        href={sponsor.link} 
         target="_blank" 
         rel="noopener noreferrer"
         className="sponsor-logo-link"
       >
         <img 
-          src={sponsor.logo} 
+          src={sponsor.logo_url} 
           alt={`${sponsor.name} logo`}
           onError={(e) => {
             e.target.style.display = 'none';
@@ -229,11 +214,17 @@ const PartnersPage = () => {
       <section className="thank-you-sponsors-section">
         <div className="container">
           <h2 className="fade-in-up">Thank You to Our Sponsors!</h2>
-          <div className="sponsors-logos-grid">
-            {currentSponsors.map((sponsor, index) => (
-              <SponsorLogo key={index} sponsor={sponsor} />
-            ))}
-          </div>
+          {loading && <p className="sponsors-loading">Loading sponsors...</p>}
+
+          {error && <p className="sponsors-error">Error: {error}</p>}
+
+          {!loading && !error && (
+            <div className="sponsors-logos-grid">
+              {sponsors.map((sponsor) => (
+                <SponsorLogo key={sponsor.id} sponsor={sponsor} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>
