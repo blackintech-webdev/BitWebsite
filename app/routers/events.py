@@ -3,15 +3,39 @@ from app.schemas.event import EventCreate, EventUpdate, EventOut
 from app.dependencies import require_auth, security
 from app.config import supabase, supabase_admin
 from typing import List
+from datetime import datetime
+from typing import List
 
 router = APIRouter(prefix="/events", tags=["Events"])
 
-# GET all — public
-@router.get("/", response_model=List[EventOut])
-def get_events():
-    res = supabase_admin.table("events").select("*").execute()
+@router.get("/get-past-events", response_model=List[EventOut])
+def get_past_events(limit: int = 4, offset: int = 0):
+    now = datetime.now().isoformat()
+    
+    end_index = offset + limit - 1
+    
+    res = supabase_admin.table("events") \
+        .select("*") \
+        .lt("date_time", now) \
+        .order("date_time", desc=True) \
+        .range(offset, end_index) \
+        .execute()
+        
     return res.data
 
+@router.get("/get-upcoming-events", response_model=List[EventOut])
+def get_upcoming_events(limit: int = 5):
+
+    now = datetime.now().isoformat()
+
+    res = supabase_admin.table("events") \
+        .select("*") \
+        .gte("date_time", now) \
+        .order("date_time", desc=False) \
+        .limit(limit) \
+        .execute()
+        
+    return res.data
 
 # GET one — public
 @router.get("/{event_id}", response_model=EventOut)
@@ -21,7 +45,6 @@ def get_event(event_id: str):
         raise HTTPException(status_code=404, detail="Event not found")
     return res.data
 
-
 # POST — auth protected
 @router.post("/", response_model=EventOut, status_code=201)
 def create_event(
@@ -30,7 +53,6 @@ def create_event(
 ):
     res = supabase_admin.table("events").insert(event.model_dump(mode='json')).execute()
     return res.data[0]
-
 
 # PATCH — auth protected
 @router.patch("/{event_id}", response_model=EventOut)
