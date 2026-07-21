@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ClubPageExample.css";
 import PlaceholderImage from "./PlaceholderImage";
-import LinkedInImage from "../../public/images/icons/linkedin.svg";
+import LinkedInImage from "/images/icons/linkedin.svg";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
