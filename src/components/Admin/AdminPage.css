@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Admin Page Hero */
+.admin-hero {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #4B227A, #0197AF);
+  color: white;
+  overflow: hidden;
+}
+
+.admin-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 30s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(50px, 50px) rotate(1deg); }
+}
+
+.admin-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.admin-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.admin-hero p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  letter-spacing: 0.3px;
+}
+
+/* Admin Content Section */
+.admin-content {
+  background: linear-gradient(135deg, #081229, #1A2151);
+  padding: 60px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tab Navigation */
+.admin-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tab-button:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tab-button.active {
+  color: #FFD700;
+  border-bottom-color: #FFD700;
+}
+
+.tab-button i {
+  font-size: 1.2rem;
+}
+
+/* Tab Content */
+.admin-tab-content {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.panel-header h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.panel-header p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-hero {
+    padding: 60px 20px;
+  }
+
+  .admin-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .admin-hero p {
+    font-size: 1rem;
+  }
+
+  .admin-tabs {
+    gap: 10px;
+  }
+
+  .tab-button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .admin-tab-content {
+    padding: 25px;
+  }
+
+  .panel-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .admin-tabs {
+    gap: 8px;
+  }
+
+  .tab-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .tab-button i {
+    font-size: 1rem;
+  }
+
+  .admin-tab-content {
+    padding: 20px;
+  }
+}

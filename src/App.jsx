@@ -12,6 +12,7 @@ import PastBoardMembers from './components/About/PastBoardMembers';
 import PartnersPage from './components/Partners/PartnersPage';
 import BlogPage from './components/Blog/BlogPage';
 import BlogPost from './components/Blog/BlogPost';
+import AdminPage from './components/Admin/AdminPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="partners" element={<PartnersPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPost />} />
+          <Route path="admin" element={<AdminPage />} />
         </Route>
       </Routes>
     </Router>
