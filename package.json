@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/alyas-t/BitWebsite#readme",
   "dependencies": {
-    "@supabase/supabase-js": "^2.105.4",
+    "@supabase/supabase-js": "^2.109.0",
     "@vitejs/plugin-react": "^4.3.4",
     "dotenv": "^17.4.2",
     "react": "^19.0.0",
