@@ -59,7 +59,6 @@ function EventsList({ refreshTrigger }) {
   };
 
   const handleDeleteClick = (eventId) => {
-    console.log('Delete clicked for event:', eventId);
     setDeleteConfirm(eventId);
   };
 
@@ -193,35 +192,35 @@ function EventsList({ refreshTrigger }) {
                 <span>{event.name}</span>
               </div>
 
-              {/* Event DateTime */}
-              <div className="event-datetime">
-                <i className="fas fa-clock"></i>
-                <span>{formatDate(event.date_time)}</span>
-              </div>
+              {/* Scrollable Content Area */}
+              <div className="event-card-content">
+                {/* Event DateTime */}
+                <div className="event-datetime">
+                  <i className="fas fa-clock"></i>
+                  <span>{formatDate(event.date_time)}</span>
+                </div>
 
-              {/* Event Location */}
-              <div className="event-location">
-                {event.location ? (
-                  <>
-                    <i className="fas fa-map-marker-alt"></i>
-                    <span>{event.location}</span>
-                  </>
-                ) : (
-                  <span className="no-data">No location specified</span>
+                {/* Event Location */}
+                <div className="event-location">
+                  {event.location ? (
+                    <>
+                      <i className="fas fa-map-marker-alt"></i>
+                      <span>{event.location}</span>
+                    </>
+                  ) : (
+                    <span className="no-data">No location specified</span>
+                  )}
+                </div>
+
+                {/* Event Description */}
+                {event.description && (
+                  <div className="event-description">
+                    {event.description}
+                  </div>
                 )}
               </div>
 
-              {/* Event Description */}
-              {event.description && (
-                <div className="event-description">
-                  <span className="description-preview">
-                    {event.description.substring(0, 100)}
-                    {event.description.length > 100 ? '...' : ''}
-                  </span>
-                </div>
-              )}
-
-              {/* Action Buttons */}
+              {/* Action Buttons - Always Visible */}
               <div className="event-actions">
                 <button
                   onClick={() => setEditingId(event.id)}

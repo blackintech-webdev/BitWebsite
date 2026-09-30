@@ -227,7 +227,7 @@
 /* CARD-BASED LAYOUT - Admin Dashboard */
 .events-table-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 20px;
   width: 100%;
 }
@@ -239,15 +239,17 @@
 
 /* Event Card - Admin Only */
 .event-card {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(135deg, rgba(75, 34, 122, 0.15), rgba(1, 151, 175, 0.1));
   border: 1px solid rgba(255, 215, 0, 0.2);
   border-radius: 12px;
   padding: 20px;
   transition: all 0.3s ease;
-  gap: 16px;
+  gap: 12px;
   position: relative;
+  min-height: 380px;
+  justify-content: space-between;
 }
 
 .event-card:hover {
@@ -270,8 +272,8 @@
   font-weight: 700;
   color: #FFD700;
   font-size: 1.1rem;
-  margin-bottom: 8px;
   letter-spacing: 0.5px;
+  flex-shrink: 0;
 }
 
 .event-thumbnail {
@@ -281,6 +283,34 @@
   object-fit: cover;
   border: 2px solid rgba(255, 215, 0, 0.3);
   flex-shrink: 0;
+}
+
+/* Content Wrapper - Scrollable */
+.event-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  max-height: 220px;
+  padding-right: 4px;
+}
+
+.event-card-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.event-card-content::-webkit-scrollbar-track {
+  background: rgba(255, 215, 0, 0.05);
+  border-radius: 3px;
+}
+
+.event-card-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.2);
+  border-radius: 3px;
+}
+
+.event-card-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.4);
 }
 
 /* Info Grid */
@@ -315,10 +345,12 @@
   color: #FFD700;
 }
 
-.description-preview {
+.event-description {
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
   word-break: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .no-data {
@@ -326,14 +358,15 @@
   font-style: italic;
 }
 
-/* Action Buttons */
+/* Action Buttons - Fixed at Bottom */
 .event-actions {
   display: flex;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid rgba(255, 215, 0, 0.1);
   justify-content: flex-end;
+  flex-shrink: 0;
 }
 
 .btn-action {
@@ -348,6 +381,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif;
+  flex-shrink: 0;
 }
 
 .btn-edit {
@@ -492,8 +526,12 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .events-table-wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
+  }
+
+  .event-card {
+    min-height: 360px;
   }
 }
 
@@ -524,8 +562,9 @@
   }
 
   .event-card {
+    min-height: 340px;
     padding: 16px;
-    gap: 12px;
+    gap: 10px;
   }
 
   .event-name {
@@ -535,6 +574,10 @@
   .event-thumbnail {
     width: 50px;
     height: 50px;
+  }
+
+  .event-card-content {
+    max-height: 180px;
   }
 
   .event-datetime,
@@ -555,18 +598,23 @@
   }
 
   .event-card {
+    min-height: 320px;
     padding: 12px;
-    gap: 10px;
+    gap: 8px;
   }
 
   .event-name {
     font-size: 0.95rem;
-    margin-bottom: 4px;
   }
 
   .event-thumbnail {
     width: 45px;
     height: 45px;
+  }
+
+  .event-card-content {
+    max-height: 140px;
+    gap: 8px;
   }
 
   .event-datetime,

@@ -58,7 +58,7 @@ function AdminPage() {
     <div className="admin-page-container">
       {/* Hero Section */}
       <div className="admin-hero">
-        <div className="hero-content">
+        <div className="admin-hero-content">
           <h1>Admin Dashboard</h1>
           <p>Manage Events, Sponsors, Board Members & Photos</p>
         </div>

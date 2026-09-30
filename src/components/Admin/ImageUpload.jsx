@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ImageUpload.css';
 
-function ImageUpload({ onImageSelect, currentImage }) {
+function ImageUpload({ onImageSelect, currentImage, isEditing = false }) {
   const [previewUrl, setPreviewUrl] = useState(currentImage || '');
   const [inputMethod, setInputMethod] = useState('url'); // 'url' or 'upload'
   const [urlInput, setUrlInput] = useState(currentImage || '');
   const [isUploading, setIsUploading] = useState(false);
+
+  // Initialize with current image on edit
+  useEffect(() => {
+    if (isEditing && currentImage) {
+      setPreviewUrl(currentImage);
+      setUrlInput(currentImage);
+    }
+  }, [currentImage, isEditing]);
 
   // Handle URL input
   const handleUrlChange = (e) => {
@@ -69,6 +77,14 @@ function ImageUpload({ onImageSelect, currentImage }) {
         <h3>Event Image</h3>
         <span className="upload-label">{inputMethod === 'url' ? 'URL' : 'Upload'}</span>
       </div>
+
+      {/* Show current image info when editing */}
+      {isEditing && currentImage && (
+        <div className="editing-info">
+          <i className="fas fa-info-circle"></i>
+          Showing current image. Upload a new image to replace it.
+        </div>
+      )}
 
       {/* Input Method Tabs */}
       <div className="upload-method-tabs">
@@ -144,7 +160,9 @@ function ImageUpload({ onImageSelect, currentImage }) {
       {/* Image Preview */}
       {previewUrl && (
         <div className="image-preview-container">
-          <div className="preview-label">Preview</div>
+          <div className="preview-label">
+            {isEditing ? 'Current Image' : 'Preview'}
+          </div>
           <div className="image-preview">
             <img src={previewUrl} alt="Preview" />
           </div>
