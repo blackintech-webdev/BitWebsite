@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import useEventAPI from './useEventAPI';
-import EventForm from './EventForm';
-import './EventsList.css';
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import useEventAPI from "./useEventAPI";
+import EventForm from "./EventForm";
+import "./EventsList.css";
 
 function EventsList({ refreshTrigger }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [editingId, setEditingId] = useState(null);
-  const [sortBy, setSortBy] = useState('upcoming'); // 'upcoming' or 'past'
-  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState("upcoming"); // 'upcoming' or 'past'
+  const [searchQuery, setSearchQuery] = useState("");
   const [deleteConfirm, setDeleteConfirm] = useState(null);
 
-  const { getAllEvents, deleteEvent, deleteLoading, deleteError } = useEventAPI();
+  const { getAllEvents, deleteEvent, deleteLoading, deleteError } =
+    useEventAPI();
 
   // Load events on mount and when refresh trigger changes
   useEffect(() => {
@@ -26,8 +28,8 @@ function EventsList({ refreshTrigger }) {
       const data = await getAllEvents();
       setEvents(data || []);
     } catch (err) {
-      setError(err.message || 'Failed to load events');
-      console.error('Error loading events:', err);
+      setError(err.message || "Failed to load events");
+      console.error("Error loading events:", err);
     } finally {
       setLoading(false);
     }
@@ -40,18 +42,20 @@ function EventsList({ refreshTrigger }) {
 
     // Filter by search query
     if (searchQuery) {
-      filtered = filtered.filter(event =>
-        event.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (event.location && event.location.toLowerCase().includes(searchQuery.toLowerCase()))
+      filtered = filtered.filter(
+        (event) =>
+          event.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (event.location &&
+            event.location.toLowerCase().includes(searchQuery.toLowerCase())),
       );
     }
 
     // Sort by time
-    if (sortBy === 'upcoming') {
-      filtered = filtered.filter(e => new Date(e.date_time) >= now);
+    if (sortBy === "upcoming") {
+      filtered = filtered.filter((e) => new Date(e.date_time) >= now);
       filtered.sort((a, b) => new Date(a.date_time) - new Date(b.date_time));
     } else {
-      filtered = filtered.filter(e => new Date(e.date_time) < now);
+      filtered = filtered.filter((e) => new Date(e.date_time) < now);
       filtered.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
     }
 
@@ -65,10 +69,10 @@ function EventsList({ refreshTrigger }) {
   const handleConfirmDelete = async (eventId) => {
     try {
       await deleteEvent(eventId);
-      setEvents(events.filter(e => e.id !== eventId));
       setDeleteConfirm(null);
+      setEvents((prev) => prev.filter((e) => e.id !== eventId));
     } catch (err) {
-      console.error('Error deleting event:', err);
+      console.error("Error deleting event:", err);
     }
   };
 
@@ -79,12 +83,12 @@ function EventsList({ refreshTrigger }) {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return new Intl.DateTimeFormat('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
     }).format(date);
   };
 
@@ -92,14 +96,11 @@ function EventsList({ refreshTrigger }) {
 
   // Show editing form
   if (editingId) {
-    const eventToEdit = events.find(e => e.id === editingId);
+    const eventToEdit = events.find((e) => e.id === editingId);
     return (
       <div className="events-list-container">
         <div className="edit-form-header">
-          <button
-            onClick={() => setEditingId(null)}
-            className="btn-back"
-          >
+          <button onClick={() => setEditingId(null)} className="btn-back">
             <i className="fas fa-arrow-left"></i>
             Back to List
           </button>
@@ -131,15 +132,15 @@ function EventsList({ refreshTrigger }) {
 
         <div className="sort-buttons">
           <button
-            className={`sort-btn ${sortBy === 'upcoming' ? 'active' : ''}`}
-            onClick={() => setSortBy('upcoming')}
+            className={`sort-btn ${sortBy === "upcoming" ? "active" : ""}`}
+            onClick={() => setSortBy("upcoming")}
           >
             <i className="fas fa-calendar-check"></i>
             Upcoming
           </button>
           <button
-            className={`sort-btn ${sortBy === 'past' ? 'active' : ''}`}
-            onClick={() => setSortBy('past')}
+            className={`sort-btn ${sortBy === "past" ? "active" : ""}`}
+            onClick={() => setSortBy("past")}
           >
             <i className="fas fa-history"></i>
             Past
@@ -173,8 +174,8 @@ function EventsList({ refreshTrigger }) {
           <i className="fas fa-inbox"></i>
           <p>
             {events.length === 0
-              ? 'No events yet. Create your first one!'
-              : 'No events match your search.'}
+              ? "No events yet. Create your first one!"
+              : "No events match your search."}
           </p>
         </div>
       )}
@@ -182,12 +183,16 @@ function EventsList({ refreshTrigger }) {
       {/* Events Grid - Card Layout */}
       {!loading && !error && filteredEvents.length > 0 && (
         <div className="events-table-wrapper">
-          {filteredEvents.map(event => (
+          {filteredEvents.map((event) => (
             <div key={event.id} className="event-card">
               {/* Event Name with Image */}
               <div className="event-name">
                 {event.image && (
-                  <img src={event.image} alt={event.name} className="event-thumbnail" />
+                  <img
+                    src={event.image}
+                    alt={event.name}
+                    className="event-thumbnail"
+                  />
                 )}
                 <span>{event.name}</span>
               </div>
@@ -214,9 +219,7 @@ function EventsList({ refreshTrigger }) {
 
                 {/* Event Description */}
                 {event.description && (
-                  <div className="event-description">
-                    {event.description}
-                  </div>
+                  <div className="event-description">{event.description}</div>
                 )}
               </div>
 
@@ -237,44 +240,6 @@ function EventsList({ refreshTrigger }) {
                   <i className="fas fa-trash-alt"></i>
                 </button>
               </div>
-
-              {/* Delete Confirmation Modal */}
-              {deleteConfirm === event.id && (
-                <div className="delete-confirmation">
-                  <div className="confirmation-content">
-                    <p>Are you sure you want to delete this event?</p>
-                    <div className="confirmation-actions">
-                      <button
-                        onClick={() => handleConfirmDelete(event.id)}
-                        disabled={deleteLoading}
-                        className="btn-confirm"
-                      >
-                        {deleteLoading ? (
-                          <>
-                            <i className="fas fa-spinner fa-spin"></i>
-                            Deleting...
-                          </>
-                        ) : (
-                          <>
-                            <i className="fas fa-check"></i>
-                            Yes, Delete
-                          </>
-                        )}
-                      </button>
-                      <button
-                        onClick={() => setDeleteConfirm(null)}
-                        className="btn-cancel"
-                      >
-                        <i className="fas fa-times"></i>
-                        Cancel
-                      </button>
-                    </div>
-                    {deleteError && (
-                      <p className="delete-error">{deleteError}</p>
-                    )}
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -286,6 +251,52 @@ function EventsList({ refreshTrigger }) {
           Showing {filteredEvents.length} of {events.length} events
         </div>
       )}
+
+      {/* Delete Confirmation Modal - rendered in a portal on document.body so
+          card hover transforms can't affect its fixed positioning */}
+      {deleteConfirm &&
+        createPortal(
+          <div
+            className="delete-confirmation"
+            onClick={() => !deleteLoading && setDeleteConfirm(null)}
+          >
+            <div
+              className="confirmation-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <p>Are you sure you want to delete this event?</p>
+              <div className="confirmation-actions">
+                <button
+                  onClick={() => handleConfirmDelete(deleteConfirm)}
+                  disabled={deleteLoading}
+                  className="btn-confirm"
+                >
+                  {deleteLoading ? (
+                    <>
+                      <i className="fas fa-spinner fa-spin"></i>
+                      Deleting...
+                    </>
+                  ) : (
+                    <>
+                      <i className="fas fa-check"></i>
+                      Yes, Delete
+                    </>
+                  )}
+                </button>
+                <button
+                  onClick={() => setDeleteConfirm(null)}
+                  disabled={deleteLoading}
+                  className="btn-cancel"
+                >
+                  <i className="fas fa-times"></i>
+                  Cancel
+                </button>
+              </div>
+              {deleteError && <p className="delete-error">{deleteError}</p>}
+            </div>
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }

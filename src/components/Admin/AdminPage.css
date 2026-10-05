@@ -181,6 +181,12 @@
   text-transform: uppercase;
 }
 
+.admin-content .pane-header h2 {
+  color: #FFD700 !important;
+  -webkit-text-fill-color: #FFD700;
+  opacity: 1;
+}
+
 .pane-header p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;

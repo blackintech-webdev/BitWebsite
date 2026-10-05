@@ -1,71 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import useEventAPI from './useEventAPI';
-import ImageUpload from './ImageUpload';
-import './EventForm.css';
+import React, { useState, useEffect } from "react";
+import useEventAPI from "./useEventAPI";
+import ImageUpload from "./ImageUpload";
+import "./EventForm.css";
+
+// Converts an ISO date string to the local "YYYY-MM-DDTHH:mm" format
+// that <input type="datetime-local"> expects (avoids UTC shift).
+const toLocalInputValue = (iso) => {
+  const d = new Date(iso);
+  d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+  return d.toISOString().slice(0, 16);
+};
 
 function EventForm({ initialData, onSuccess, isEditing = false }) {
   const [formData, setFormData] = useState({
-    name: '',
-    date_time: '',
-    location: '',
-    description: '',
-    image: '',
+    name: initialData?.name || "",
+    date_time: initialData?.date_time
+      ? toLocalInputValue(initialData.date_time)
+      : "",
+    location: initialData?.location || "",
+    description: initialData?.description || "",
+    image: initialData?.image || "",
   });
 
   const [errors, setErrors] = useState({});
-  const [imagePreview, setImagePreview] = useState('');
+  const [imagePreview, setImagePreview] = useState(initialData?.image || "");
   const { createEvent, updateEvent, loading, error: apiError } = useEventAPI();
 
-  // Populate form with initial data if editing
+  // Re-sync form if a different event is loaded for editing
   useEffect(() => {
     if (initialData && isEditing) {
-      const dateTimeLocal = new Date(initialData.date_time)
-        .toISOString()
-        .slice(0, 16);
-      
       setFormData({
-        name: initialData.name || '',
-        date_time: dateTimeLocal || '',
-        location: initialData.location || '',
-        description: initialData.description || '',
-        image: initialData.image || '',
+        name: initialData.name || "",
+        date_time: initialData.date_time
+          ? toLocalInputValue(initialData.date_time)
+          : "",
+        location: initialData.location || "",
+        description: initialData.description || "",
+        image: initialData.image || "",
       });
-      setImagePreview(initialData.image || '');
+      setImagePreview(initialData.image || "");
     }
   }, [initialData, isEditing]);
 
   // Simple validation
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) {
-      newErrors.name = 'Event name is required';
+      newErrors.name = "Event name is required";
     }
     if (!formData.date_time) {
-      newErrors.date_time = 'Date and time are required';
+      newErrors.date_time = "Date and time are required";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: '',
+        [name]: "",
       }));
     }
   };
 
   const handleImageSelect = (imageUrl) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       image: imageUrl,
     }));
@@ -74,7 +82,7 @@ function EventForm({ initialData, onSuccess, isEditing = false }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -85,22 +93,22 @@ function EventForm({ initialData, onSuccess, isEditing = false }) {
       } else {
         await createEvent(formData);
       }
-      
+
       // Reset form on success
       if (!isEditing) {
         setFormData({
-          name: '',
-          date_time: '',
-          location: '',
-          description: '',
-          image: '',
+          name: "",
+          date_time: "",
+          location: "",
+          description: "",
+          image: "",
         });
-        setImagePreview('');
+        setImagePreview("");
       }
-      
+
       onSuccess?.();
     } catch (err) {
-      console.error('Form submission error:', err);
+      console.error("Form submission error:", err);
     }
   };
 
@@ -127,7 +135,7 @@ function EventForm({ initialData, onSuccess, isEditing = false }) {
               value={formData.name}
               onChange={handleInputChange}
               placeholder="e.g., Cloud Computing Workshop"
-              className={`form-input ${errors.name ? 'error' : ''}`}
+              className={`form-input ${errors.name ? "error" : ""}`}
             />
             {errors.name && (
               <span className="form-error">
@@ -146,7 +154,7 @@ function EventForm({ initialData, onSuccess, isEditing = false }) {
               name="date_time"
               value={formData.date_time}
               onChange={handleInputChange}
-              className={`form-input ${errors.date_time ? 'error' : ''}`}
+              className={`form-input ${errors.date_time ? "error" : ""}`}
             />
             {errors.date_time && (
               <span className="form-error">
@@ -187,7 +195,8 @@ function EventForm({ initialData, onSuccess, isEditing = false }) {
 
         {/* Right Column - Image Upload */}
         <div className="form-column">
-          <ImageUpload 
+          <ImageUpload
+            key={initialData?.id || "new"}
             onImageSelect={handleImageSelect}
             currentImage={imagePreview}
           />
@@ -196,20 +205,16 @@ function EventForm({ initialData, onSuccess, isEditing = false }) {
 
       {/* Form Actions */}
       <div className="form-actions">
-        <button
-          type="submit"
-          disabled={loading}
-          className="btn-submit"
-        >
+        <button type="submit" disabled={loading} className="btn-submit">
           {loading ? (
             <>
               <i className="fas fa-spinner fa-spin"></i>
-              {isEditing ? 'Updating...' : 'Creating...'}
+              {isEditing ? "Updating..." : "Creating..."}
             </>
           ) : (
             <>
-              <i className={`fas fa-${isEditing ? 'save' : 'plus'}`}></i>
-              {isEditing ? 'Update Event' : 'Create Event'}
+              <i className={`fas fa-${isEditing ? "save" : "plus"}`}></i>
+              {isEditing ? "Update Event" : "Create Event"}
             </>
           )}
         </button>

@@ -538,12 +538,15 @@
 @media (max-width: 768px) {
   .events-controls {
     flex-direction: column;
+    align-items: stretch;
     gap: 12px;
   }
 
   .search-box {
-    min-width: 100%;
+    flex: none;
     width: 100%;
+    min-width: 0;
+    height: 44px;
   }
 
   .sort-buttons {
