@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import AdminLogin from "./AdminLogin";
 import EventForm from "./EventForm";
@@ -8,11 +8,16 @@ import "./AdminPage.css";
 function AdminPage() {
   const [activeTab, setActiveTab] = useState("create"); // 'create' or 'manage'
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   const { user, loading, signOut } = useAuth();
 
-  // Show loading while auth initializes
-  if (loading) {
+  useEffect(() => {
+    if (!loading) setHasInitialized(true);
+  }, [loading]);
+
+  // Show spinner only while the initial auth check runs
+  if (loading && !hasInitialized) {
     return (
       <div className="admin-page-container">
         <div
