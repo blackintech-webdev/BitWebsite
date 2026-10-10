@@ -1,0 +1,298 @@
+/* Admin Page Container */
+.admin-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #0f1932;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hero Section */
+.admin-hero {
+  background: linear-gradient(135deg, #4B227A 0%, #0197AF 100%);
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.admin-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(1, 151, 175, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.admin-hero-content {
+  flex: 1;
+  z-index: 2;
+  text-align: left;
+}
+
+.admin-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.admin-hero p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* User Info & Logout */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.user-email {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000;
+  background: linear-gradient(135deg, #FFD700, #FFC700);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+.btn-logout:active {
+  transform: translateY(0);
+}
+
+.btn-logout i {
+  font-size: 0.9rem;
+}
+
+/* Tab Navigation */
+.admin-tabs {
+  display: flex;
+  gap: 0;
+  background: #ffffff;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+  padding: 0;
+  margin: 0;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(75, 34, 122, 0.6);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tab-btn:hover {
+  color: rgba(75, 34, 122, 0.9);
+  background: rgba(75, 34, 122, 0.05);
+}
+
+.tab-btn.active {
+  color: #000;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(1, 151, 175, 0.1));
+  border-bottom-color: #FFD700;
+}
+
+.tab-btn i {
+  font-size: 1.1rem;
+}
+
+/* Admin Content */
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Tab Pane */
+.tab-pane {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+.tab-pane.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Pane Header */
+.pane-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.pane-header h2 {
+  font-size: 1.8rem;
+  color: #FFD700;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.admin-content .pane-header h2 {
+  color: #FFD700 !important;
+  -webkit-text-fill-color: #FFD700;
+  opacity: 1;
+}
+
+.pane-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #FFD700;
+}
+
+.loading-container i {
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .admin-hero h1 {
+    font-size: 2rem;
+  }
+
+  .admin-hero p {
+    font-size: 1.1rem;
+  }
+
+  .user-info {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .admin-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+
+  .admin-content {
+    padding: 20px 10px;
+  }
+
+  .pane-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-hero {
+    padding: 30px 15px;
+  }
+
+  .admin-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .admin-hero p {
+    font-size: 0.95rem;
+  }
+
+  .user-email {
+    font-size: 0.85rem;
+  }
+
+  .btn-logout {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+
+  .tab-btn {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+
+  .tab-btn i {
+    font-size: 1rem;
+  }
+
+  .pane-header h2 {
+    font-size: 1.2rem;
+  }
+}
