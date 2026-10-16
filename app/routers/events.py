@@ -8,6 +8,16 @@ from typing import List
 
 router = APIRouter(prefix="/events", tags=["Events"])
 
+# GET all events — for admin dashboard
+@router.get("/", response_model=List[EventOut])
+def get_all_events():
+    """Fetch all events (both past and upcoming) for admin dashboard"""
+    res = supabase_admin.table("events") \
+        .select("*") \
+        .order("date_time", desc=False) \
+        .execute()
+    return res.data
+
 @router.get("/get-past-events", response_model=List[EventOut])
 def get_past_events(limit: int = 4, offset: int = 0):
     now = datetime.now().isoformat()
