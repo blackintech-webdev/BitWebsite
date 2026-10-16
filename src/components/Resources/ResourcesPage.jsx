@@ -3,6 +3,7 @@ import './Resources.css';
 import rss1 from '../images/rss1.jpg';
 import rss2 from '../images/rss2.jpg';
 import rss3 from '../images/rss3.jpg';
+import afroTech from '../images/afrotech-card.png';
 
 const ResourcesPage = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -34,12 +35,12 @@ const ResourcesPage = () => {
     },
     {
       id: 2,
-      title: 'Black in Tech Conferences',
-      description: 'Information about major tech conferences for Black professionals including AfrоTech, NSBE Convention, and Black Enterprise TechConnext.',
-      image: 'https://obsidi.com/wp-content/uploads/2024/07/black-tech-conferences.jpg',
+      title: 'AfroTech Conference',
+      description: 'Connect, learn, and grow at AfroTech, a premier conference bringing together Black professionals, innovators, and industry leaders to explore the latest in technology, build meaningful connections, and discover new career opportunities.',
+      image: afroTech,
       category: 'events',
-      tags: ['AfrоTech', 'Conferences', 'Networking'],
-      link: 'https://www.blacktechconference.com/'
+      tags: ['AfrоTech', 'Conference', 'Networking'],
+      link: 'https://afrotech.com/'
     },
     {
       id: 3,

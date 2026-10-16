@@ -12,7 +12,7 @@ const GetInvolved = () => {
   };
 
   return (
-    <div className="get-involved-page">
+    <div className="get-involved-page page-transition">
       {/* Hero Section with Modern Design */}
       <div className="hero-section">
         <div className="container">
@@ -130,7 +130,7 @@ const GetInvolved = () => {
           <div className="cta-container fade-in-up">
             <h2>Ready to make an impact?</h2>
             <p>Reach out to us with any questions about getting involved.</p>
-            <a href="mailto:contact@blackintechatuci.com" className="cta-button">
+            <a href="mailto:blackintech@uci.edu" className="cta-button">
               <i className="far fa-envelope"></i> Contact Us
             </a>
           </div>

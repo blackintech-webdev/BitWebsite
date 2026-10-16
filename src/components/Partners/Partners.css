@@ -720,3 +720,19 @@
     height: 100px;
   }
 }
+
+.sponsors-loading {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  padding: 40px 0;
+  letter-spacing: 0.3px;
+}
+
+.sponsors-error {
+  text-align: center;
+  color: #c0392b;
+  font-size: 1rem;
+  padding: 40px 0;
+  letter-spacing: 0.3px;
+}

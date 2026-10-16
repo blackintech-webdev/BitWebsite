@@ -574,6 +574,24 @@ html, body {
   }
 }
 
+@media (max-width: 390px) {
+  .hero {
+    padding: 30px 20px 70px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  
+  .cta h1 {
+    font-size: 1.2rem;
+  }
+}
+
 /* Page Transition Animation */
 @keyframes fadeInLeft {
   from {
