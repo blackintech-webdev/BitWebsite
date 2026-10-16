@@ -263,7 +263,7 @@
 }
 
 .past-board-year-group {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .past-board-year-group:first-of-type {
@@ -615,4 +615,148 @@ body .about-page .board-section .board-member h3 {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-} 
+}
+
+/* Past Board Members Accordion */
+
+.past-board-year-group {
+  margin-bottom: 24px;
+}
+
+.past-board-year-heading {
+  margin: 0;
+}
+
+.past-board-accordion-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 20px 24px;
+
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+
+  background-color: #eaf5f7;
+  color: #4B227A;
+
+  border: 1px solid #c8e1e8;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.past-board-accordion-toggle:hover {
+  background-color: #dceff2;
+}
+
+.past-board-accordion-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.past-board-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.past-board-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+/* Add more spacing between the 2025-2026 dropdown header and the cards */
+.past-board-accordion-inner > .board-members {
+  margin-top: 24px;
+}
+
+/* Smooth accordion expand/collapse animation */
+
+.past-board-accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.3s ease, opacity 0.3s ease;
+}
+
+.past-board-accordion-content.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.past-board-accordion-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .past-board-accordion-content {
+    transition: none;
+  }
+}
+
+/* 2024-2025 Past Board Members - Directory Layout(Text Representation) */
+
+.past-board-directory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 60px;
+  margin-top: 24px;
+}
+
+.past-board-directory-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.past-board-text-member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.past-board-member-position {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--teal-color);
+}
+
+.past-board-member-name {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: right;
+  color: #4B227A !important;
+}
+
+/* Mobile layout */
+
+@media (max-width: 768px) {
+  .past-board-directory {
+  grid-template-columns: 1fr;
+  column-gap: 0;
+}
+
+  .past-board-directory-column {
+    justify-content: flex-start;
+  }
+
+  .past-board-text-member {
+    gap: 12px;
+  }
+
+  .past-board-member-position {
+    font-size: 14px;
+  }
+
+  .past-board-member-name {
+    font-size: 16px;
+  }
+}
