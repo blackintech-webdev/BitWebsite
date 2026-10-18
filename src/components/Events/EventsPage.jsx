@@ -23,8 +23,8 @@ const EventsPage = () => {
 
       <div className="events-blog-cta fade-in-up">
         <h2>Stay Updated</h2>
-        <p>Read about our latest events, workshops, and community highlights in our blog.</p>
-        <Link to="/blog" className="cta-button">View Blog</Link>
+        <p>Read about our latest events, opportunities, and community highlights with our newsletter.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeR3v0jj8S474_T54c-xnbS_9kJeB9DzjhuKJv_DNtFiIFiwQ/viewform" className="cta-button">Join our Newsletter</a>
       </div>
     </div>
   );

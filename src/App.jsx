@@ -10,8 +10,6 @@ import BoardResponsibilities from './components/GetInvolved/BoardResponsibilitie
 import ClubPageExample from './components/ClubPageExample';
 import PastBoardMembers from './components/About/PastBoardMembers';
 import PartnersPage from './components/Partners/PartnersPage';
-import BlogPage from './components/Blog/BlogPage';
-import BlogPost from './components/Blog/BlogPost';
 
 function App() {
   return (
@@ -26,8 +24,6 @@ function App() {
           <Route path="about" element={<ClubPageExample />} />
           <Route path="about/past-board" element={<PastBoardMembers />} />
           <Route path="partners" element={<PartnersPage />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="blog/:slug" element={<BlogPost />} />
         </Route>
       </Routes>
     </Router>
