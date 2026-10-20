@@ -19,62 +19,77 @@ const PastBoardMembers = () => {
         {
           name: "Chidera Okoroama",
           position: "President",
-          image: '/images/BoardSolo/Chidera Okoroama.jpg',
+          image: '/images/BoardSolo/Chidera Okoroama.webp',
         },
         {
           name: "Chibueze Ndukwe",
           position: "Vice President",
-          image: '/images/BoardSolo/Chibueze Ndukwe.jpg',
+          image: '/images/BoardSolo/Chibueze Ndukwe.webp',
         },
         {
           name: "Aurelia Aubrey",
           position: "Treasurer",
-          image: '/images/BoardSolo/Aurelia Aubrey.jpg',
+          image: '/images/BoardSolo/Aurelia Aubrey.webp',
         },
         {
           name: "Ziyad Abbas",
           position: "Treasurer",
-          image: '/images/BoardSolo/Ziyad Abbas.jpg',
+          image: '/images/BoardSolo/Ziyad Abbas.webp',
         },
         {
           name: "Stephanie Onwu",
           position: "Secretary",
-          image: '/images/BoardSolo/Stephanie Onwu.jpg',
+          image: '/images/BoardSolo/Stephanie Onwu.webp',
         },
         {
           name: "Brina White",
           position: "Marketing",
-          image: '/images/BoardSolo/Brina White.jpg',
+          image: '/images/BoardSolo/Brina White.webp',
+        },
+        {
+          name: "Angela Wang",
+          position: "Marketing",
+          image: '/images/BoardSolo/Angela Wang.webp',
         },
         {
           name: "Juan Muhirwe",
           position: "Event Coordinator",
-          image: '/images/BoardSolo/Juan Muhirwe.jpg',
+          image: '/images/BoardSolo/Juan Muhirwe.webp',
         },
         {
           name: "Mahanth Kommireddy",
           position: "Event Coordinator",
-          image: '/images/BoardSolo/Mahanth Kommireddy.jpg',
+          image: '/images/BoardSolo/Mahanth Kommireddy.webp',
         },
         {
           name: "Nahum Gebreab",
           position: "Internal Outreach",
-          image: '/images/BoardSolo/Nahum Gebreab.jpg',
+          image: '/images/BoardSolo/Nahum Gebreab.webp',
+        },
+        {
+          name: "Layla Harvey",
+          position: "External Outreach",
+          image: '/images/BoardSolo/Layla Harvey.webp',
+        },
+        {
+          name: "Alyas Thomas",
+          position: "Lead Web Developer",
+          image: '/images/BoardSolo/Alyas Thomas.webp',
         },
         {
           name: "Derrick Thrower",
           position: "Web Developer",
-          image: '/images/BoardSolo/Derrick Thrower.jpg',
+          image: '/images/BoardSolo/Derrick Thrower.webp',
         },
         {
           name: "Ival Momoh",
           position: "Web Developer",
-          image: '/images/BoardSolo/Ival Momoh.jpg',
+          image: '/images/BoardSolo/Ival Momoh.webp',
         },
         {
           name: "Chioma Madu",
           position: "General Officer",
-          image: '/images/BoardSolo/Chioma Madu.jpg',
+          image: '/images/BoardSolo/Chioma Madu.webp',
         }
       ]
     },
@@ -134,7 +149,7 @@ const PastBoardMembers = () => {
       {/* Hero Section */}
       <section className="hero-section past-board-hero">
         <div className="container">
-          <h1 className="fade-in-up">Past Board Members</h1>
+          <h1 className="fade-in-up">Past Board</h1>
           <p className="fade-in-up">Meet the dedicated individuals who helped build and shape Black in Tech at UCI</p>
           <Link to="/about" className="cta-button fade-in-up">Back to About</Link>
         </div>
@@ -143,7 +158,6 @@ const PastBoardMembers = () => {
       {/* Past Board Members Section */}
       <section className="board-section">
         <div className="container">
-          <h2 className="fade-in-up">Our Past Board Members</h2>
           {pastBoardMembersByYear.map((group) => (
             <div className="past-board-year-group" key={group.year}>
               <h3 className="past-board-year-heading">
@@ -189,6 +203,8 @@ const PastBoardMembers = () => {
                             <img
                               src={member.image}
                               alt={member.name}
+                              loading="lazy"
+                              decoding="async"
                               onError={(e) => PlaceholderImage.handleImageError(e, member.name)}
                             />
                           </div>
