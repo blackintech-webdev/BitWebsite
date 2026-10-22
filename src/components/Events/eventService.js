@@ -33,7 +33,7 @@ export const fetchPaginatedPastEvents = async (limit = 5, offset = 0) => {
 
 export const fetchUpcomingEvents = async (limit = 5) => {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/events/get-upcoming-events?limit=${limit}`);
+    const response = await fetch(`${API_URL}/events/get-upcoming-events?limit=${limit}`);
     
     if (!response.ok) {
       throw new Error(`HTTP error status: ${response.status}`);
