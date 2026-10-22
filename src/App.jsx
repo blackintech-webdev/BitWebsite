@@ -10,6 +10,7 @@ import BoardResponsibilities from './components/GetInvolved/BoardResponsibilitie
 import ClubPageExample from './components/ClubPageExample';
 import PastBoardMembers from './components/About/PastBoardMembers';
 import PartnersPage from './components/Partners/PartnersPage';
+import AdminPage from './components/Admin/AdminPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="about" element={<ClubPageExample />} />
           <Route path="about/past-board" element={<PastBoardMembers />} />
           <Route path="partners" element={<PartnersPage />} />
+          <Route path="admin" element={<AdminPage />} />
         </Route>
       </Routes>
     </Router>
