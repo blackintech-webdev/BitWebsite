@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Box, Button, IconButton, Stack, Collapse } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import logo from "../../../public/images/icons/bit-logo.png";
+import logo from "../images/icons/bit-logo.png";
 
 const CENTER_LINKS = [
   { to: "/", label: "Home" },

@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import logo from "../../../public/images/icons/bit-logo-light.png";
-import temp_background from "../../../public/images/background/temp_background.jpg";
+import logo from "../images/icons/bit-logo-light.png";
+import temp_background from "../images/background/temp_background.jpg";
 
 const Hero = () => (
   <Box
