@@ -1,0 +1,59 @@
+.bit-mission-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 222px;
+  padding: 24px;
+  gap: 10px;
+
+  background-color: #D2D9E8;
+  border-radius: 8px;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.mission-card-title {
+  font-family: "Roboto", sans-serif;
+  color: #02153D;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: 0.25px;
+  text-align: center;
+  margin: 0;
+}
+.mission-card-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-card-icon img {
+  max-width: 60px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.mission-card-divider {
+  width: 72px;
+  border-top: 1px solid #462B7F;
+}
+
+
+.bit-mission-card .mission-card-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #02153D;
+  text-align: center;
+  margin: 0;
+}
