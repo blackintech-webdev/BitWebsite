@@ -29,68 +29,6 @@ html, body {
   line-height: 1.6;
 }
 
-/* Modern Hero Section - Simplified */
-.hero {
-  position: relative;
-  padding: 120px 20px 100px;
-  text-align: center;
-  background: linear-gradient(135deg, #4B227A, #0197AF);
-  overflow: hidden;
-  margin: 0;
-  color: white;
-}
-
-/* Remove the bubbly pattern overlay */
-.hero::before {
-  content: none;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-content .logo, .logo-placeholder {
-  margin-bottom: 30px;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-  transition: transform 0.3s ease;
-}
-
-.hero-content .logo:hover {
-  transform: scale(1.05);
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.hero-content p {
-  font-size: 1.3rem;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.5px;
-  line-height: 1.6;
-}
-
 /* Fix for the Home page buttons to ensure consistency */
 .btn {
   display: inline-block;
