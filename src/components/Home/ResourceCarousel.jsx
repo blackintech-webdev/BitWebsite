@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Box, Card, CardMedia, CardContent, Typography, IconButton } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  IconButton,
+} from "@mui/material";
 import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import ChevronRight from "@mui/icons-material/ChevronRight";
 
@@ -38,12 +45,13 @@ const BlankImage = () => (
     aria-label="Image unavailable"
     sx={{
       ...imageSizeSx,
-      background: "repeating-conic-gradient(#efefef 0% 25%, #fafafa 0% 50%) 50% / 24px 24px",
+      background:
+        "repeating-conic-gradient(#efefef 0% 25%, #fafafa 0% 50%) 50% / 24px 24px",
     }}
   />
 );
 
-export default function ResourceCarousel({ items = [] }) {
+export default function ResourceCarousel({ items = [], sx = {} }) {
   const trackRef = useRef(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -82,10 +90,28 @@ export default function ResourceCarousel({ items = [] }) {
   return (
     <Box
       component="section"
-      sx={{ bgcolor: "#444", py: { xs: 2, sm: 4 }, px: { xs: 1.5, md: 4 } }}
+      sx={{
+        bgcolor: "#444",
+        py: { xs: 2, sm: 4 },
+        px: { xs: 1.5, md: 4 },
+        ...sx,
+      }}
     >
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, maxWidth: 1306, mx: "auto" }}>
-        <IconButton aria-label="Previous" onClick={() => scroll(-1)} disabled={atStart} sx={arrowSx}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+          maxWidth: 1306,
+          mx: "auto",
+        }}
+      >
+        <IconButton
+          aria-label="Previous"
+          onClick={() => scroll(-1)}
+          disabled={atStart}
+          sx={arrowSx}
+        >
           <ChevronLeft />
         </IconButton>
 
@@ -125,7 +151,9 @@ export default function ResourceCarousel({ items = [] }) {
                     image={item.image}
                     alt={item.shortTitle ?? item.title}
                     loading="lazy"
-                    onError={() => setFailed((prev) => ({ ...prev, [item.id]: true }))}
+                    onError={() =>
+                      setFailed((prev) => ({ ...prev, [item.id]: true }))
+                    }
                     sx={{
                       "&&": {
                         ...imageSizeSx,
@@ -192,7 +220,12 @@ export default function ResourceCarousel({ items = [] }) {
           })}
         </Box>
 
-        <IconButton aria-label="Next" onClick={() => scroll(1)} disabled={atEnd} sx={arrowSx}>
+        <IconButton
+          aria-label="Next"
+          onClick={() => scroll(1)}
+          disabled={atEnd}
+          sx={arrowSx}
+        >
           <ChevronRight />
         </IconButton>
       </Box>

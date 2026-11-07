@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PlaceholderImage from '../PlaceholderImage';
+import OfferSection from '../Home/OfferSection';
 import './Home.css';
 
 function Home() {
@@ -37,39 +38,10 @@ function Home() {
           </Link>
         </div>
       </section>
-
+      <OfferSection />
       {/* Content Section */}
       <section className="content">
         {/* FIRST CONTENT ITEM */}
-        <div className="content-item">
-          <div className="image-container">
-            <img 
-              src="https://i.ibb.co/CXjCJvd/IMG-1731-Original.jpg" 
-              alt="Learn More" 
-              onError={handleImageError}
-            />
-            <PlaceholderImage 
-              alt="Learn More" 
-              style={{ display: 'none' }}
-            />
-          </div>
-          <div className="content-text">
-            <h2>
-              Learn more about 
-              <span className="highlight"> Software Development</span>, 
-              <span className="highlight"> Tech Talks</span>, and much more.
-            </h2>
-            <p>
-              Hosted weekly during the academic quarter, join us for 
-              <span className="highlight"> engaging workshops </span> 
-              to level up your skills, network with others, and grow as a 
-              <span className="highlight"> tech innovator</span>.
-            </p>
-            <Link to="/events" className="text-button">
-              Explore our events
-            </Link>
-          </div>
-        </div>
         
         {/* SECOND CONTENT ITEM */}
         <div className="content-item reverse">
