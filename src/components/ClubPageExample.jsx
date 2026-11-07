@@ -61,7 +61,7 @@ const ClubPageExample = () => {
             </div>
             <div className="info-image fade-in-right">
               <img
-                src="/images/Black in Tech.jpg"
+                src="/images/Board_Group_Photo.webp"
                 alt="Black in Tech at UCI Board Members"
                 onError={(e) =>
                   PlaceholderImage.handleImageError(

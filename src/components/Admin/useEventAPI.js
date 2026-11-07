@@ -72,7 +72,7 @@ const useEventAPI = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch(`${API_URL}/events`);
+      const response = await fetch(`${API_URL}/events/`);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return await response.json();
     } catch (err) {
@@ -163,7 +163,7 @@ const useEventAPI = () => {
 
       console.log('Creating event with auth header');
 
-      const response = await fetch(`${API_URL}/events`, {
+      const response = await fetch(`${API_URL}/events/`, {
         method: 'POST',
         headers,
         body: JSON.stringify(payload),
