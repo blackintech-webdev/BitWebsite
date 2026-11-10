@@ -4,9 +4,8 @@ function MissionCard({ icon, title, description }) {
   return (
     <div className="bit-mission-card">
       <div className="mission-card-icon">
-        {icon}
+        <img src={icon} alt="" />
       </div>
-
       <h3 className="mission-card-title">{title}</h3>
 
       <div className="mission-card-divider"></div>
