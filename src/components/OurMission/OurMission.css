@@ -1,0 +1,80 @@
+
+.our-mission {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 96px 100px;
+  background: linear-gradient(
+    90deg,
+    #28578C 0%,
+    #462B7F 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.our-mission .our-mission-heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 48px !important;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #FFFFFF !important;
+  text-align: center;
+  margin: 0 !important;
+}
+
+.our-mission-cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 48px;
+}
+
+.our-mission .bit-mission-card {
+  width: 274px;
+  min-height: 272px;
+  flex-shrink: 0;
+}
+
+/* Smaller screens */
+@media (max-width: 1400px) {
+  .our-mission {
+    padding: 64px 32px;
+    gap: 64px;
+  }
+
+  .our-mission-cards {
+    flex-wrap: wrap;
+  }
+
+  .our-mission .bit-mission-card {
+    flex-shrink: 1;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .our-mission {
+    padding: 48px 24px;
+    gap: 40px;
+  }
+
+  .our-mission .our-mission-heading {
+    font-size: 32px !important;
+  }
+
+  .our-mission-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .our-mission .bit-mission-card {
+    width: 100%;
+    max-width: 274px;
+  }
+}
