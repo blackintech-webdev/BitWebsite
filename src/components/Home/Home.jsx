@@ -1,3 +1,4 @@
+import OurMission from "../OurMission/OurMission";
 import React from "react";
 import { Link } from "react-router-dom";
 import PlaceholderImage from "../PlaceholderImage";
@@ -108,6 +109,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Our Mission Section */}
+      <OurMission />
 
       {/* CTA Section */}
       <section className="cta">
