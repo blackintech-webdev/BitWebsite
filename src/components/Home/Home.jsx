@@ -1,3 +1,4 @@
+import Interested from "../Interested/Interested";
 import OurMission from "../OurMission/OurMission";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -112,6 +113,9 @@ function Home() {
 
       {/* Our Mission Section */}
       <OurMission />
+
+      {/* Interested Section */}
+      <Interested />
 
       {/* CTA Section */}
       <section className="cta">
