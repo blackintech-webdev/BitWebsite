@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
  *
  * Returns { active, select }. Pass `select` as HeaderButtons' onChange.
  */
-export default function useAutoCycle(count, intervalMs = 5000) {
+export default function useAutoCycle(count, intervalMs = 10000) {
   const [active, setActive] = useState(0);
   const [stopped, setStopped] = useState(false);
 
