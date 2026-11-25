@@ -1,19 +1,6 @@
 import "./styles.css";
 import Button from "./Button.jsx";
 
-export function NavItem({ active = false, onClick, children }) {
-  return (
-    <button
-      type="button"
-      className={`ui-control ui-nav-item${active ? " ui-nav-item--active" : ""}`}
-      aria-pressed={active}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
-}
-
 /**
  * items: [{ key: string, label: string }]
  * activeIndex: currently selected item
