@@ -1,0 +1,85 @@
+/* ==========================================================
+   Tokens (from the Figma Properties panel)
+   ========================================================== */
+:root {
+  --color-navy: #02153d;
+  --color-white: #ffffff;
+  --color-blue: #2a5c9b; /* estimated from the screenshot, confirm in Figma */
+
+  --radius-md: 16px;
+  --shadow-base: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ==========================================================
+   Shared base: every button and nav item is built on this.
+   100 x 42 at "HEADER": 1px transparent border + 7px/19px padding
+   keeps outlined and plain variants the same height.
+   ========================================================== */
+.ui-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 19px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ui-control:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   Button: color axis x style axis
+   ========================================================== */
+.ui-btn {
+  --btn-color: var(--color-navy);
+  --btn-contrast: var(--color-white);
+  color: var(--btn-color);
+}
+
+.ui-btn--navy  { --btn-color: var(--color-navy);  --btn-contrast: var(--color-white); }
+.ui-btn--white { --btn-color: var(--color-white); --btn-contrast: var(--color-navy); }
+.ui-btn--blue  { --btn-color: var(--color-blue);  --btn-contrast: var(--color-white); }
+
+.ui-btn--filled {
+  background: var(--btn-color);
+  color: var(--btn-contrast);
+  box-shadow: var(--shadow-base);
+}
+
+.ui-btn--outline {
+  border-color: var(--btn-color);
+}
+
+/* .ui-btn--text needs nothing extra: it is the base .ui-btn look */
+
+/* ==========================================================
+   Header nav: a row of items, Figma gap 10px
+   ========================================================== */
+.ui-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ui-nav-item {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.ui-nav-item--active {
+  background: var(--color-navy);
+  box-shadow: var(--shadow-base);
+}
