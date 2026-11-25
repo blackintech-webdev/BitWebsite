@@ -1,32 +1,52 @@
 import "./styles.css";
- 
-export function NavItem({ href = "#", active = false, children }) {
+import Button from "./Button.jsx";
+
+export function NavItem({ active = false, onClick, children }) {
   return (
-    <a
-      href={href}
+    <button
+      type="button"
       className={`ui-control ui-nav-item${active ? " ui-nav-item--active" : ""}`}
-      aria-current={active ? "page" : undefined}
+      aria-pressed={active}
+      onClick={onClick}
     >
       {children}
-    </a>
+    </button>
   );
 }
- 
+
 /**
- * items: [{ label: string, href: string }]
- * activeIndex: which item is the current page
+ * items: [{ key: string, label: string }]
+ * activeIndex: currently selected item
+ * onChange: called with the clicked index
+ * color:           "navy" | "white" | "blue"
+ * activeVariant:   variant of the selected item
+ * inactiveVariant: variant of the others
  */
-export default function HeaderNav({ items, activeIndex = 0 }) {
+export default function HeaderNav({
+  items,
+  activeIndex = 0,
+  onChange,
+  color = "navy",
+  activeVariant = "filled",
+  inactiveVariant = "text",
+  ariaLabel,
+}) {
   return (
-    <nav aria-label="Main">
-      <div className="ui-header-nav">
-        {items.map((item, i) => (
-          <NavItem key={item.href} href={item.href} active={i === activeIndex}>
+    <div className="ui-header-nav" role="group" aria-label={ariaLabel}>
+      {items.map((item, i) => {
+        const active = i === activeIndex;
+        return (
+          <Button
+            key={item.key}
+            color={color}
+            variant={active ? activeVariant : inactiveVariant}
+            aria-pressed={active}
+            onClick={() => onChange?.(i)}
+          >
             {item.label}
-          </NavItem>
-        ))}
-      </div>
-    </nav>
+          </Button>
+        );
+      })}
+    </div>
   );
 }
- 
