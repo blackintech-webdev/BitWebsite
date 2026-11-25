@@ -353,10 +353,10 @@
 
 /* Update any section titles */
 .section-title, h2 {
-  font-size: 2rem !important;
-  font-weight: 600 !important;
-  color: #444 !important;
-  margin-bottom: 30px !important;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 30px;
 }
 
 /* For the resources header, force white color with max specificity */
